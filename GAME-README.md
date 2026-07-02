@@ -66,6 +66,25 @@ node game-selftest.js   # 33 comprobaciones de la lógica del juego
 
 No se modificó `quiz-data-all.js`. Las preguntas ya traen `explanation` y se muestra tras cada respuesta; si falta, la UI indica dónde añadirla (campo `explanation` de la pregunta).
 
+## Jugar desde el móvil
+
+La app está publicada como sitio estático en GitHub Pages (ver pasos abajo si hay que republicar).
+El progreso es **por dispositivo** (localStorage): el móvil y el PC tienen cada uno su personaje.
+Para moverlo, usa los botones **⬇ Exportar / ⬆ Importar** del HUD (genera/lee un JSON).
+
+Publicación (una vez):
+
+```powershell
+# 1) Crear repo público "aws-saa-game" en https://github.com/new (sin README)
+git remote add origin https://github.com/<TU_USUARIO>/aws-saa-game.git
+git push -u origin main
+# 2) En GitHub: Settings → Pages → Source: Deploy from a branch → main / (root)
+# 3) URL final: https://<TU_USUARIO>.github.io/aws-saa-game/
+```
+
+Actualizar tras cambios locales: `git add -A; git commit -m "update"; git push`.
+Nota: el PDF del libro está en `.gitignore` a propósito (copyright); no se publica.
+
 ## Mejoras futuras recomendadas
 
 1. **Explicaciones enriquecidas**: muchas explicaciones son solo la respuesta repetida; un pase con IA sobre `quiz-data-all.js` para redactar el *porqué* real daría mucho valor.
