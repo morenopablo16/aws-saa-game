@@ -228,6 +228,45 @@ button:focus-visible, a:focus-visible, label:focus-within {
 }
 .mission-card.done .mini-bar .fill { background: var(--good); }
 
+/* Packs de examen: chips conmutables que delimitan el pool de todos los modos */
+.exams-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.exams-all {
+  font-family: var(--body-font);
+  font-size: 11.5px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 9px;
+  cursor: pointer;
+}
+.exams-all:hover { color: var(--ink); border-color: var(--muted); }
+.exam-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.exam-chip {
+  font-family: var(--hud-font);
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.exam-chip .n { font-weight: 700; }
+.exam-chip .pct { font-size: 10px; opacity: 0.75; margin-left: 5px; }
+.exam-chip:hover { border-color: rgba(255, 153, 0, 0.45); color: var(--ink); }
+.exam-chip[aria-pressed="true"] {
+  border-color: rgba(255, 153, 0, 0.55);
+  background: rgba(255, 153, 0, 0.10);
+  color: var(--orange-hi);
+}
+.exams-note {
+  margin-top: 9px;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
 .modes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

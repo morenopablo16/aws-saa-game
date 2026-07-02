@@ -30,6 +30,7 @@
       totals: { answered: 0, correct: 0 },
       streak: { last: "", days: 0 },
       daily: { day: "", missions: [] },
+      exams: [],  // packs de examen activos; vacío = todos (se normaliza al cargar)
       q: {},      // qid -> {s, c, w, box, due, flag}
       boss: {},   // categoryId -> true si el jefe fue derrotado
       history: [] // {t, mode, n, c, xp}
@@ -86,6 +87,24 @@
   const chestRng = GC.mulberry32((Date.now() & 0xffffffff) >>> 0);
 
   // ---------------------------------------------------------------
+  // Packs de examen (Exam 1..N): la selección delimita el pool de todos los modos
+  // ---------------------------------------------------------------
+  const EXAMS = [...new Set(ALL.map((q) => q.exam))].sort(
+    (a, b) => parseInt(a.replace(/\D+/g, ""), 10) - parseInt(b.replace(/\D+/g, ""), 10)
+  );
+  const examByQ = {};
+  for (const q of ALL) examByQ[q.id] = q.exam;
+  // Estados guardados antes de esta versión no traen "exams": todos activos.
+  if (!Array.isArray(state.exams) || state.exams.length === 0) state.exams = EXAMS.slice();
+
+  function enabledExams() { return new Set(state.exams); }
+
+  function activePool() {
+    const en = enabledExams();
+    return en.size >= EXAMS.length ? ALL : ALL.filter((q) => en.has(q.exam));
+  }
+
+  // ---------------------------------------------------------------
   // Misiones diarias
   // ---------------------------------------------------------------
   function ensureDaily() {
@@ -114,10 +133,10 @@
     const queue = GC.buildQueue(
       mode,
       { categoryId: categoryId || null, count: mode === "boss" ? 5 : mode === "review" ? 15 : 10 },
-      ALL, catIndex, state.q, Date.now(), Math.random
+      activePool(), catIndex, state.q, Date.now(), Math.random
     );
     if (queue.length === 0) {
-      toast("No hay preguntas para este modo todavía. ¡Juega una ronda primero!", "reward");
+      toast("No hay preguntas para este modo con los packs de examen activos.", "reward");
       return;
     }
     S = {
@@ -198,7 +217,8 @@
   }
 
   function categoryStats(catId) {
-    const ids = catIndex.byCat[catId] || [];
+    const en = enabledExams();
+    const ids = (catIndex.byCat[catId] || []).filter((id) => en.has(examByQ[id]));
     let c = 0, w = 0, mastered = 0;
     for (const id of ids) {
       const s = state.q[id];
@@ -214,6 +234,41 @@
     };
   }
 
+  function renderExams() {
+    const box = $("examChips");
+    box.innerHTML = "";
+    const en = enabledExams();
+    for (const exam of EXAMS) {
+      const ids = ALL.filter((q) => q.exam === exam);
+      const mastered = ids.filter((q) => state.q[q.id] && (state.q[q.id].c || 0) > 0).length;
+      const btn = document.createElement("button");
+      btn.className = "exam-chip";
+      btn.setAttribute("aria-pressed", en.has(exam) ? "true" : "false");
+      btn.innerHTML = `<span class="n">${exam}</span><span class="pct">${mastered}/${ids.length}</span>`;
+      btn.addEventListener("click", () => toggleExam(exam));
+      box.appendChild(btn);
+    }
+    const pool = activePool();
+    $("examsNote").textContent =
+      pool.length + " preguntas en juego · la selección se aplica a todos los modos";
+  }
+
+  function toggleExam(exam) {
+    const en = enabledExams();
+    if (en.has(exam)) {
+      if (en.size === 1) {
+        toast("Deja al menos un pack activo.", "");
+        return;
+      }
+      en.delete(exam);
+    } else {
+      en.add(exam);
+    }
+    state.exams = EXAMS.filter((e) => en.has(e));
+    saveState();
+    renderDashboard();
+  }
+
   function renderModes() {
     const grid = $("modesGrid");
     grid.innerHTML = "";
@@ -224,8 +279,9 @@
       let extra = "";
       if (key === "review") {
         const now = Date.now();
-        const due = ALL.filter((q) => GC.isDue(state.q[q.id], now)).length;
-        const flagged = ALL.filter((q) => state.q[q.id] && state.q[q.id].flag).length;
+        const pool = activePool();
+        const due = pool.filter((q) => GC.isDue(state.q[q.id], now)).length;
+        const flagged = pool.filter((q) => state.q[q.id] && state.q[q.id].flag).length;
         if (due + flagged > 0) extra = `<div class="mode-desc" style="color:var(--orange-hi); margin-top:4px;">${due} pendientes · ${flagged} marcadas</div>`;
       }
       btn.innerHTML =
@@ -281,7 +337,7 @@
     const t = state.totals;
     const acc = t.answered === 0 ? "—" : Math.round((t.correct / t.answered) * 100) + "%";
     const now = Date.now();
-    const due = ALL.filter((q) => GC.isDue(state.q[q.id], now)).length;
+    const due = activePool().filter((q) => GC.isDue(state.q[q.id], now)).length;
     const mastered = Object.values(state.q).filter((s) => (s.box || 0) >= 3).length;
     const tiles = [
       { num: lv.level, lbl: "Nivel" },
@@ -300,6 +356,7 @@
     ensureDaily();
     renderHUD();
     renderMissions();
+    renderExams();
     renderModes();
     renderCategories();
     renderStats();
@@ -716,6 +773,12 @@
     $("flagBtn").textContent = flagged ? "★ Marcada para repaso" : "☆ Marcar para repaso";
     $("flagBtn").classList.toggle("flagged", flagged);
     toast(flagged ? "Pregunta marcada: aparecerá en Repaso" : "Marca quitada", "");
+  });
+
+  $("examsAllBtn").addEventListener("click", () => {
+    state.exams = EXAMS.slice();
+    saveState();
+    renderDashboard();
   });
 
   // Export/import: el progreso vive en localStorage (por dispositivo);

@@ -92,6 +92,14 @@ check("campaña respeta la categoría", camp.every((q) => idx.byQ[q.id] === catI
 const boss = GC.buildQueue("boss", { categoryId: catId, count: 5 }, QUESTIONS, idx, stateQ, now);
 check("boss devuelve 5 de la categoría", boss.length === 5 && boss.every((q) => idx.byQ[q.id] === catId));
 
+console.log("== Filtro por packs de examen ==");
+const onlyExam2 = QUESTIONS.filter((q) => q.exam === "Exam 2");
+check("el banco tiene Exam 2", onlyExam2.length > 0);
+const q2quick = GC.buildQueue("quick", { count: 10 }, onlyExam2, idx, stateQ, now);
+check("con pool filtrado la ronda solo saca de ese pack", q2quick.every((q) => q.exam === "Exam 2"));
+const q2sprint = GC.buildQueue("sprint", {}, onlyExam2, idx, stateQ, now);
+check("sprint respeta el pool filtrado", q2sprint.length === onlyExam2.length && q2sprint.every((q) => q.exam === "Exam 2"));
+
 console.log("== Corrección de respuestas (igual que el quiz clásico) ==");
 const qMulti = { correct: ["A", "C"] };
 check("multirespuesta exacta", GC.checkAnswer(qMulti, ["C", "A"]) === true);
