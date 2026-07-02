@@ -1,0 +1,1695 @@
+{
+  "appliedAt": "2026-07-02T11:52:08.898Z",
+  "glue": [
+    {
+      "id": "saa-25",
+      "exam": "Exam 1",
+      "index": 25,
+      "field": "option B",
+      "applied": [
+        "\\bDynamoDProvision\\b -> DynamoDB. Provision"
+      ]
+    },
+    {
+      "id": "saa-62",
+      "exam": "Exam 1",
+      "index": 62,
+      "field": "option B",
+      "applied": [
+        "\\bALUse\\b -> ALB. Use"
+      ]
+    },
+    {
+      "id": "saa-63",
+      "exam": "Exam 1",
+      "index": 63,
+      "field": "option B",
+      "applied": [
+        "\\bDynamoDUse\\b -> DynamoDB. Use"
+      ]
+    },
+    {
+      "id": "saa-135",
+      "exam": "Exam 3",
+      "index": 5,
+      "field": "option C",
+      "applied": [
+        "\\bVPUpdate\\b -> VPC. Update"
+      ]
+    },
+    {
+      "id": "saa-408",
+      "exam": "Exam 7",
+      "index": 18,
+      "field": "explanation",
+      "applied": [
+        "\\bNLProcess\\b -> NLB. Process"
+      ]
+    },
+    {
+      "id": "saa-408",
+      "exam": "Exam 7",
+      "index": 18,
+      "field": "option B",
+      "applied": [
+        "\\bNLProcess\\b -> NLB. Process"
+      ]
+    },
+    {
+      "id": "saa-439",
+      "exam": "Exam 7",
+      "index": 49,
+      "field": "option C",
+      "applied": [
+        "\\bVPUpdate\\b -> VPC. Update"
+      ]
+    },
+    {
+      "id": "saa-510",
+      "exam": "Exam 8",
+      "index": 55,
+      "field": "explanation",
+      "applied": [
+        "\\bVPUpdate\\b -> VPC. Update"
+      ]
+    },
+    {
+      "id": "saa-510",
+      "exam": "Exam 8",
+      "index": 55,
+      "field": "option C",
+      "applied": [
+        "\\bVPUpdate\\b -> VPC. Update"
+      ]
+    },
+    {
+      "id": "saa-549",
+      "exam": "Exam 9",
+      "index": 29,
+      "field": "option C",
+      "applied": [
+        "\\bVPModify\\b -> VPC. Modify"
+      ]
+    },
+    {
+      "id": "saa-571",
+      "exam": "Exam 9",
+      "index": 51,
+      "field": "explanation",
+      "applied": [
+        "\\bCImport\\b -> CA. Import"
+      ]
+    },
+    {
+      "id": "saa-571",
+      "exam": "Exam 9",
+      "index": 51,
+      "field": "option A",
+      "applied": [
+        "\\bCImport\\b -> CA. Import"
+      ]
+    }
+  ],
+  "truncated": [
+    {
+      "id": "saa-61",
+      "exam": "Exam 1",
+      "index": 61,
+      "option": "B",
+      "via": "source",
+      "before": "e S3 Versioning to ensure the ability to fall back to previous values.",
+      "after": "e S3 Versioning to ensure the ability to fall back to previous values."
+    },
+    {
+      "id": "saa-62",
+      "exam": "Exam 1",
+      "index": 62,
+      "option": "D",
+      "via": "source",
+      "before": "cate. Apply the certificate to the ALB. Use Amazon EventBridge (Amazon",
+      "after": "he certificate is nearing expiration. Rotate the certificate manually."
+    },
+    {
+      "id": "saa-82",
+      "exam": "Exam 2",
+      "index": 17,
+      "option": "B",
+      "via": "source",
+      "before": "hin 30 days. Configure Amazon EventBridge (Amazon CloudWatch resource.",
+      "after": " Service (Amazon SNS) when AWS Config reports a noncompliant resource."
+    },
+    {
+      "id": "saa-117",
+      "exam": "Exam 2",
+      "index": 52,
+      "option": "D",
+      "via": "source",
+      "before": "n server to deliver the logs to Amazon Kinesis Data Streams. Configure",
+      "after": " the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service)."
+    },
+    {
+      "id": "saa-428",
+      "exam": "Exam 7",
+      "index": 38,
+      "option": "D",
+      "via": "source",
+      "before": "Attach a policy to the role that allows read and write access from the",
+      "after": "of the Lambda function to attach to the new role as an execution role."
+    },
+    {
+      "id": "saa-435",
+      "exam": "Exam 7",
+      "index": 45,
+      "option": "C",
+      "via": "source",
+      "before": "ion Service (AWS DMS) with AWS Schema continue the ongoing replication",
+      "after": "ce to AWS to finish the migration and continue the ongoing replication"
+    },
+    {
+      "id": "saa-435",
+      "exam": "Exam 7",
+      "index": 45,
+      "option": "D",
+      "via": "source",
+      "before": "stablish a connection with the data center. Use AWS Database Migration",
+      "after": "(AWS SCT) to migrate the database with replication of ongoing changes."
+    },
+    {
+      "id": "saa-502",
+      "exam": "Exam 8",
+      "index": 47,
+      "option": "D",
+      "via": "source",
+      "before": "d an Application accelerator in AWS Global Accelerator for the website",
+      "after": "es. Configure an accelerator in AWS Global Accelerator for the website"
+    },
+    {
+      "id": "saa-620",
+      "exam": "Exam 10",
+      "index": 35,
+      "option": "B",
+      "via": "source",
+      "before": "Amazon ElastiCache for Memcached cluster",
+      "after": "azon ElastiCache for Memcached cluster with the payment ID as the key."
+    },
+    {
+      "id": "saa-637",
+      "exam": "Exam 10",
+      "index": 52,
+      "option": "E",
+      "via": "source",
+      "before": "MySQL-compatible Amazon Aurora",
+      "after": "MySQL-compatible Amazon Aurora Serverless"
+    },
+    {
+      "id": "saa-639",
+      "exam": "Exam 10",
+      "index": 54,
+      "option": "B",
+      "via": "source",
+      "before": "Replace the ALB with a Network Load Balancer",
+      "after": " Network Load Balancer configured to use Server Name Indication (SNI)."
+    },
+    {
+      "id": "saa-659",
+      "exam": "Exam 11",
+      "index": 9,
+      "option": "C",
+      "via": "source",
+      "before": "AWS Snowball Edge Storage Optimized",
+      "after": "ross- Region Replication to copy objects to the destination S3 bucket."
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "saa-5",
+      "exam": "Exam 1",
+      "index": 5,
+      "option": "A",
+      "tail": "Copy the data so both EBS volumes contain all the documents"
+    },
+    {
+      "id": "saa-5",
+      "exam": "Exam 1",
+      "index": 5,
+      "option": "B",
+      "tail": "d Balancer to direct a user to the server with the documents"
+    },
+    {
+      "id": "saa-5",
+      "exam": "Exam 1",
+      "index": 5,
+      "option": "C",
+      "tail": ". Modify the application to save new documents to Amazon EFS"
+    },
+    {
+      "id": "saa-5",
+      "exam": "Exam 1",
+      "index": 5,
+      "option": "D",
+      "tail": "o both servers. Return each document from the correct server"
+    },
+    {
+      "id": "saa-22",
+      "exam": "Exam 1",
+      "index": 22,
+      "option": "A",
+      "tail": "S3 Standard"
+    },
+    {
+      "id": "saa-22",
+      "exam": "Exam 1",
+      "index": 22,
+      "option": "B",
+      "tail": "S3 Intelligent-Tiering"
+    },
+    {
+      "id": "saa-76",
+      "exam": "Exam 2",
+      "index": 11,
+      "option": "A",
+      "tail": "AWS DataSync over public internet"
+    },
+    {
+      "id": "saa-76",
+      "exam": "Exam 2",
+      "index": 11,
+      "option": "B",
+      "tail": "AWS DataSync over AWS Direct Connect"
+    },
+    {
+      "id": "saa-76",
+      "exam": "Exam 2",
+      "index": 11,
+      "option": "C",
+      "tail": "WS Database Migration Service (AWS DMS) over public internet"
+    },
+    {
+      "id": "saa-76",
+      "exam": "Exam 2",
+      "index": 11,
+      "option": "D",
+      "tail": "Database Migration Service (AWS DMS) over AWS Direct Connect"
+    },
+    {
+      "id": "saa-106",
+      "exam": "Exam 2",
+      "index": 41,
+      "option": "C",
+      "tail": " encryption with AWS KMS keys (SSE-KMS) with manual rotation"
+    },
+    {
+      "id": "saa-106",
+      "exam": "Exam 2",
+      "index": 41,
+      "option": "D",
+      "tail": "cryption with AWS KMS keys (SSE-KMS) with automatic rotation"
+    },
+    {
+      "id": "saa-110",
+      "exam": "Exam 2",
+      "index": 45,
+      "option": "C",
+      "tail": "er's browser to Amazon S3 through the use of a presigned URL"
+    },
+    {
+      "id": "saa-127",
+      "exam": "Exam 2",
+      "index": 62,
+      "option": "A",
+      "tail": "ble data storage, and Amazon S3 Glacier for archival storage"
+    },
+    {
+      "id": "saa-127",
+      "exam": "Exam 2",
+      "index": 62,
+      "option": "B",
+      "tail": "ble data storage, and Amazon S3 Glacier for archival storage"
+    },
+    {
+      "id": "saa-127",
+      "exam": "Exam 2",
+      "index": 62,
+      "option": "C",
+      "tail": "for durable data storage, and Amazon S3 for archival storage"
+    },
+    {
+      "id": "saa-127",
+      "exam": "Exam 2",
+      "index": 62,
+      "option": "D",
+      "tail": "ble data storage, and Amazon S3 Glacier for archival storage"
+    },
+    {
+      "id": "saa-132",
+      "exam": "Exam 3",
+      "index": 2,
+      "option": "B",
+      "tail": "AWS Lambda and Amazon DynamoDB"
+    },
+    {
+      "id": "saa-132",
+      "exam": "Exam 3",
+      "index": 2,
+      "option": "C",
+      "tail": "Application Load Balancer with Amazon EC2 Auto Scaling"
+    },
+    {
+      "id": "saa-132",
+      "exam": "Exam 3",
+      "index": 2,
+      "option": "D",
+      "tail": "Amazon Route 53 with internal Application Load Balancers"
+    },
+    {
+      "id": "saa-138",
+      "exam": "Exam 3",
+      "index": 8,
+      "option": "D",
+      "tail": "ng group for EC2 instances that host the PostgreSQL database"
+    },
+    {
+      "id": "saa-162",
+      "exam": "Exam 3",
+      "index": 32,
+      "option": "D",
+      "tail": "ic Block Store (Amazon EBS) General Purpose SSD (gp2) volume"
+    },
+    {
+      "id": "saa-180",
+      "exam": "Exam 3",
+      "index": 50,
+      "option": "D",
+      "tail": "Use Amazon GuardDuty with AWS Shield Standard"
+    },
+    {
+      "id": "saa-212",
+      "exam": "Exam 4",
+      "index": 17,
+      "option": "A",
+      "tail": "S3 Intelligent-Tiering"
+    },
+    {
+      "id": "saa-212",
+      "exam": "Exam 4",
+      "index": 17,
+      "option": "B",
+      "tail": "S3 Glacier Instant Retrieval"
+    },
+    {
+      "id": "saa-212",
+      "exam": "Exam 4",
+      "index": 17,
+      "option": "C",
+      "tail": "S3 Standard"
+    },
+    {
+      "id": "saa-220",
+      "exam": "Exam 4",
+      "index": 25,
+      "option": "A",
+      "tail": "An AWS Glue job"
+    },
+    {
+      "id": "saa-220",
+      "exam": "Exam 4",
+      "index": 25,
+      "option": "B",
+      "tail": "An AWS Lambda function"
+    },
+    {
+      "id": "saa-221",
+      "exam": "Exam 4",
+      "index": 26,
+      "option": "C",
+      "tail": "Amazon EC2 instance store"
+    },
+    {
+      "id": "saa-242",
+      "exam": "Exam 4",
+      "index": 47,
+      "option": "A",
+      "tail": "Simple routing policy"
+    },
+    {
+      "id": "saa-242",
+      "exam": "Exam 4",
+      "index": 47,
+      "option": "B",
+      "tail": "Latency routing policy"
+    },
+    {
+      "id": "saa-242",
+      "exam": "Exam 4",
+      "index": 47,
+      "option": "C",
+      "tail": "Multivalue routing policy"
+    },
+    {
+      "id": "saa-242",
+      "exam": "Exam 4",
+      "index": 47,
+      "option": "D",
+      "tail": "Geolocation routing policy"
+    },
+    {
+      "id": "saa-243",
+      "exam": "Exam 4",
+      "index": 48,
+      "option": "A",
+      "tail": "gateway as a virtual machine (VM) on premises at each clinic"
+    },
+    {
+      "id": "saa-250",
+      "exam": "Exam 4",
+      "index": 55,
+      "option": "A",
+      "tail": ". Set the CloudWatch log group with an expiration of 90 days"
+    },
+    {
+      "id": "saa-252",
+      "exam": "Exam 4",
+      "index": 57,
+      "option": "C",
+      "tail": "Amazon S3 Glacier Deep Archive"
+    },
+    {
+      "id": "saa-252",
+      "exam": "Exam 4",
+      "index": 57,
+      "option": "D",
+      "tail": "AWS Backup"
+    },
+    {
+      "id": "saa-253",
+      "exam": "Exam 4",
+      "index": 58,
+      "option": "A",
+      "tail": "Deleting IAM users"
+    },
+    {
+      "id": "saa-253",
+      "exam": "Exam 4",
+      "index": 58,
+      "option": "B",
+      "tail": "Deleting directories"
+    },
+    {
+      "id": "saa-253",
+      "exam": "Exam 4",
+      "index": 58,
+      "option": "C",
+      "tail": "Deleting Amazon EC2 instances"
+    },
+    {
+      "id": "saa-253",
+      "exam": "Exam 4",
+      "index": 58,
+      "option": "D",
+      "tail": "Deleting logs from Amazon CloudWatch Logs"
+    },
+    {
+      "id": "saa-290",
+      "exam": "Exam 5",
+      "index": 30,
+      "option": "A",
+      "tail": "Dedicated Instances only"
+    },
+    {
+      "id": "saa-290",
+      "exam": "Exam 5",
+      "index": 30,
+      "option": "B",
+      "tail": "On-Demand Instances only"
+    },
+    {
+      "id": "saa-290",
+      "exam": "Exam 5",
+      "index": 30,
+      "option": "C",
+      "tail": "A mix of On-Demand Instances and Spot Instances"
+    },
+    {
+      "id": "saa-290",
+      "exam": "Exam 5",
+      "index": 30,
+      "option": "D",
+      "tail": "A mix of On-Demand Instances and Reserved Instances"
+    },
+    {
+      "id": "saa-291",
+      "exam": "Exam 5",
+      "index": 31,
+      "option": "A",
+      "tail": "Signed cookies"
+    },
+    {
+      "id": "saa-291",
+      "exam": "Exam 5",
+      "index": 31,
+      "option": "B",
+      "tail": "Signed URLs"
+    },
+    {
+      "id": "saa-291",
+      "exam": "Exam 5",
+      "index": 31,
+      "option": "C",
+      "tail": "AWS AppSync"
+    },
+    {
+      "id": "saa-291",
+      "exam": "Exam 5",
+      "index": 31,
+      "option": "E",
+      "tail": "AWS Secrets Manager"
+    },
+    {
+      "id": "saa-301",
+      "exam": "Exam 5",
+      "index": 41,
+      "option": "A",
+      "tail": "AWS Snowcone"
+    },
+    {
+      "id": "saa-301",
+      "exam": "Exam 5",
+      "index": 41,
+      "option": "B",
+      "tail": "Amazon FSx File Gateway"
+    },
+    {
+      "id": "saa-301",
+      "exam": "Exam 5",
+      "index": 41,
+      "option": "C",
+      "tail": "AWS DataSync"
+    },
+    {
+      "id": "saa-301",
+      "exam": "Exam 5",
+      "index": 41,
+      "option": "D",
+      "tail": "AWS Transfer Family"
+    },
+    {
+      "id": "saa-307",
+      "exam": "Exam 5",
+      "index": 47,
+      "option": "A",
+      "tail": "Amazon S3 File Gateway"
+    },
+    {
+      "id": "saa-307",
+      "exam": "Exam 5",
+      "index": 47,
+      "option": "B",
+      "tail": "AWS Storage Gateway Tape Gateway"
+    },
+    {
+      "id": "saa-307",
+      "exam": "Exam 5",
+      "index": 47,
+      "option": "C",
+      "tail": "AWS Storage Gateway Volume Gateway stored volumes"
+    },
+    {
+      "id": "saa-307",
+      "exam": "Exam 5",
+      "index": 47,
+      "option": "D",
+      "tail": "AWS Storage Gateway Volume Gateway cached volumes"
+    },
+    {
+      "id": "saa-314",
+      "exam": "Exam 5",
+      "index": 54,
+      "option": "A",
+      "tail": "Amazon Aurora MySQL"
+    },
+    {
+      "id": "saa-314",
+      "exam": "Exam 5",
+      "index": 54,
+      "option": "B",
+      "tail": "Amazon Aurora Serverless for MySQL"
+    },
+    {
+      "id": "saa-314",
+      "exam": "Exam 5",
+      "index": 54,
+      "option": "C",
+      "tail": "Amazon Redshift Spectrum"
+    },
+    {
+      "id": "saa-314",
+      "exam": "Exam 5",
+      "index": 54,
+      "option": "D",
+      "tail": "Amazon RDS for MySQL"
+    },
+    {
+      "id": "saa-346",
+      "exam": "Exam 6",
+      "index": 21,
+      "option": "A",
+      "tail": "Volume Gateway"
+    },
+    {
+      "id": "saa-346",
+      "exam": "Exam 6",
+      "index": 21,
+      "option": "B",
+      "tail": "Tape Gateway"
+    },
+    {
+      "id": "saa-346",
+      "exam": "Exam 6",
+      "index": 21,
+      "option": "C",
+      "tail": "Amazon FSx File Gateway"
+    },
+    {
+      "id": "saa-346",
+      "exam": "Exam 6",
+      "index": 21,
+      "option": "D",
+      "tail": "Amazon S3 File Gateway"
+    },
+    {
+      "id": "saa-347",
+      "exam": "Exam 6",
+      "index": 22,
+      "option": "A",
+      "tail": "Compute Savings Plan"
+    },
+    {
+      "id": "saa-347",
+      "exam": "Exam 6",
+      "index": 22,
+      "option": "B",
+      "tail": "EC2 Instance Savings Plan"
+    },
+    {
+      "id": "saa-347",
+      "exam": "Exam 6",
+      "index": 22,
+      "option": "C",
+      "tail": "Zonal Reserved Instances"
+    },
+    {
+      "id": "saa-347",
+      "exam": "Exam 6",
+      "index": 22,
+      "option": "D",
+      "tail": "Standard Reserved Instances"
+    },
+    {
+      "id": "saa-363",
+      "exam": "Exam 6",
+      "index": 38,
+      "option": "A",
+      "tail": "Amazon EventBridge event bus"
+    },
+    {
+      "id": "saa-363",
+      "exam": "Exam 6",
+      "index": 38,
+      "option": "B",
+      "tail": "Amazon Simple Notification Service (Amazon SNS) FIFO topics"
+    },
+    {
+      "id": "saa-363",
+      "exam": "Exam 6",
+      "index": 38,
+      "option": "C",
+      "tail": "zon Simple Notification Service (Amazon SNS) standard topics"
+    },
+    {
+      "id": "saa-363",
+      "exam": "Exam 6",
+      "index": 38,
+      "option": "D",
+      "tail": "Amazon Simple Queue Service (Amazon SQS) FIFO queues"
+    },
+    {
+      "id": "saa-365",
+      "exam": "Exam 6",
+      "index": 40,
+      "option": "A",
+      "tail": "Read replicas"
+    },
+    {
+      "id": "saa-365",
+      "exam": "Exam 6",
+      "index": 40,
+      "option": "B",
+      "tail": "Manual snapshots"
+    },
+    {
+      "id": "saa-365",
+      "exam": "Exam 6",
+      "index": 40,
+      "option": "C",
+      "tail": "Automated backups"
+    },
+    {
+      "id": "saa-365",
+      "exam": "Exam 6",
+      "index": 40,
+      "option": "D",
+      "tail": "Multi-AZ deployments"
+    },
+    {
+      "id": "saa-383",
+      "exam": "Exam 6",
+      "index": 58,
+      "option": "A",
+      "tail": "Dedicated Reserved Hosts"
+    },
+    {
+      "id": "saa-383",
+      "exam": "Exam 6",
+      "index": 58,
+      "option": "B",
+      "tail": "Dedicated On-Demand Hosts"
+    },
+    {
+      "id": "saa-383",
+      "exam": "Exam 6",
+      "index": 58,
+      "option": "C",
+      "tail": "Dedicated Reserved Instances"
+    },
+    {
+      "id": "saa-383",
+      "exam": "Exam 6",
+      "index": 58,
+      "option": "D",
+      "tail": "Dedicated On-Demand Instances"
+    },
+    {
+      "id": "saa-395",
+      "exam": "Exam 7",
+      "index": 5,
+      "option": "A",
+      "tail": "Amazon GuardDuty"
+    },
+    {
+      "id": "saa-395",
+      "exam": "Exam 7",
+      "index": 5,
+      "option": "B",
+      "tail": "Amazon Inspector"
+    },
+    {
+      "id": "saa-395",
+      "exam": "Exam 7",
+      "index": 5,
+      "option": "C",
+      "tail": "AWS CloudTrail"
+    },
+    {
+      "id": "saa-395",
+      "exam": "Exam 7",
+      "index": 5,
+      "option": "D",
+      "tail": "AWS Config"
+    },
+    {
+      "id": "saa-411",
+      "exam": "Exam 7",
+      "index": 21,
+      "option": "A",
+      "tail": "Amazon DynamoDB"
+    },
+    {
+      "id": "saa-411",
+      "exam": "Exam 7",
+      "index": 21,
+      "option": "B",
+      "tail": "Amazon RDS for MySQL"
+    },
+    {
+      "id": "saa-411",
+      "exam": "Exam 7",
+      "index": 21,
+      "option": "C",
+      "tail": "MySQL-compatible Amazon Aurora Serverless"
+    },
+    {
+      "id": "saa-411",
+      "exam": "Exam 7",
+      "index": 21,
+      "option": "D",
+      "tail": "MySQL deployed on Amazon EC2 in an Auto Scaling group"
+    },
+    {
+      "id": "saa-425",
+      "exam": "Exam 7",
+      "index": 35,
+      "option": "A",
+      "tail": "GP2 volume type"
+    },
+    {
+      "id": "saa-425",
+      "exam": "Exam 7",
+      "index": 35,
+      "option": "B",
+      "tail": "io2 volume type"
+    },
+    {
+      "id": "saa-425",
+      "exam": "Exam 7",
+      "index": 35,
+      "option": "C",
+      "tail": "GP3 volume type"
+    },
+    {
+      "id": "saa-425",
+      "exam": "Exam 7",
+      "index": 35,
+      "option": "D",
+      "tail": "io1 volume type"
+    },
+    {
+      "id": "saa-451",
+      "exam": "Exam 7",
+      "index": 61,
+      "option": "A",
+      "tail": "on RDS infrastructure layer, operating system, and platforms"
+    },
+    {
+      "id": "saa-451",
+      "exam": "Exam 7",
+      "index": 61,
+      "option": "B",
+      "tail": "DB instance and configuring the scheduled maintenance window"
+    },
+    {
+      "id": "saa-451",
+      "exam": "Exam 7",
+      "index": 61,
+      "option": "C",
+      "tail": "tch management, log management, and host intrusion detection"
+    },
+    {
+      "id": "saa-451",
+      "exam": "Exam 7",
+      "index": 61,
+      "option": "D",
+      "tail": "hes for all minor and major database versions for Amazon RDS"
+    },
+    {
+      "id": "saa-451",
+      "exam": "Exam 7",
+      "index": 61,
+      "option": "E",
+      "tail": "security of the Amazon RDS infrastructure in the data center"
+    },
+    {
+      "id": "saa-451",
+      "exam": "Exam 7",
+      "index": 61,
+      "option": "F",
+      "tail": "ion of the data that moves in transit through Direct Connect"
+    },
+    {
+      "id": "saa-458",
+      "exam": "Exam 8",
+      "index": 3,
+      "option": "B",
+      "tail": "AWS Lambda"
+    },
+    {
+      "id": "saa-458",
+      "exam": "Exam 8",
+      "index": 3,
+      "option": "C",
+      "tail": "Amazon RDS"
+    },
+    {
+      "id": "saa-458",
+      "exam": "Exam 8",
+      "index": 3,
+      "option": "D",
+      "tail": "Amazon DynamoDB"
+    },
+    {
+      "id": "saa-463",
+      "exam": "Exam 8",
+      "index": 8,
+      "option": "A",
+      "tail": "Use AWS Glue with a Scala job"
+    },
+    {
+      "id": "saa-463",
+      "exam": "Exam 8",
+      "index": 8,
+      "option": "B",
+      "tail": "Use Amazon EMR with an Apache Spark script"
+    },
+    {
+      "id": "saa-463",
+      "exam": "Exam 8",
+      "index": 8,
+      "option": "C",
+      "tail": "Use AWS Lambda with a Python script"
+    },
+    {
+      "id": "saa-463",
+      "exam": "Exam 8",
+      "index": 8,
+      "option": "D",
+      "tail": "Use AWS Glue with a PySpark job"
+    },
+    {
+      "id": "saa-465",
+      "exam": "Exam 8",
+      "index": 10,
+      "option": "A",
+      "tail": "es with Amazon Elastic Block Store (Amazon EBS) Multi-Attach"
+    },
+    {
+      "id": "saa-465",
+      "exam": "Exam 8",
+      "index": 10,
+      "option": "B",
+      "tail": "es with Amazon Elastic Block Store (Amazon EBS) Multi-Attach"
+    },
+    {
+      "id": "saa-465",
+      "exam": "Exam 8",
+      "index": 10,
+      "option": "C",
+      "tail": "es with Amazon Elastic Block Store (Amazon EBS) Multi-Attach"
+    },
+    {
+      "id": "saa-465",
+      "exam": "Exam 8",
+      "index": 10,
+      "option": "D",
+      "tail": "es with Amazon Elastic Block Store (Amazon EBS) Multi-Attach"
+    },
+    {
+      "id": "saa-466",
+      "exam": "Exam 8",
+      "index": 11,
+      "option": "A",
+      "tail": "-AZ EC2 Auto Scaling and create an Application Load Balancer"
+    },
+    {
+      "id": "saa-466",
+      "exam": "Exam 8",
+      "index": 11,
+      "option": "B",
+      "tail": "of the EC2 instances and send them to a different AWS Region"
+    },
+    {
+      "id": "saa-466",
+      "exam": "Exam 8",
+      "index": 11,
+      "option": "C",
+      "tail": "53 latency-based routing to feed requests to the application"
+    },
+    {
+      "id": "saa-466",
+      "exam": "Exam 8",
+      "index": 11,
+      "option": "D",
+      "tail": "ing requests and create a Multi-AZ Application Load Balancer"
+    },
+    {
+      "id": "saa-469",
+      "exam": "Exam 8",
+      "index": 14,
+      "option": "C",
+      "tail": "ransition objects from S3 Standard to S3 Intelligent-Tiering"
+    },
+    {
+      "id": "saa-469",
+      "exam": "Exam 8",
+      "index": 14,
+      "option": "D",
+      "tail": "not been accessed from S3 Standard to S3 Intelligent-Tiering"
+    },
+    {
+      "id": "saa-470",
+      "exam": "Exam 8",
+      "index": 15,
+      "option": "A",
+      "tail": "eway and make it the destination of the subnet's route table"
+    },
+    {
+      "id": "saa-470",
+      "exam": "Exam 8",
+      "index": 15,
+      "option": "B",
+      "tail": "eway and make it the destination of the subnet's route table"
+    },
+    {
+      "id": "saa-470",
+      "exam": "Exam 8",
+      "index": 15,
+      "option": "C",
+      "tail": "eway and make it the destination of the subnet's route table"
+    },
+    {
+      "id": "saa-470",
+      "exam": "Exam 8",
+      "index": 15,
+      "option": "D",
+      "tail": "eway and make it the destination of the subnet's route table"
+    },
+    {
+      "id": "saa-471",
+      "exam": "Exam 8",
+      "index": 16,
+      "option": "A",
+      "tail": "Enable S3 Intelligent-Tiering for the S3 bucket"
+    },
+    {
+      "id": "saa-471",
+      "exam": "Exam 8",
+      "index": 16,
+      "option": "B",
+      "tail": "Enable S3 Transfer Acceleration for the S3 bucket"
+    },
+    {
+      "id": "saa-471",
+      "exam": "Exam 8",
+      "index": 16,
+      "option": "C",
+      "tail": "S3. Associate this endpoint with all route tables in the VPC"
+    },
+    {
+      "id": "saa-471",
+      "exam": "Exam 8",
+      "index": 16,
+      "option": "D",
+      "tail": "PC. Associate this endpoint with all route tables in the VPC"
+    },
+    {
+      "id": "saa-473",
+      "exam": "Exam 8",
+      "index": 18,
+      "option": "A",
+      "tail": "oudFront distribution to cache state files at edge locations"
+    },
+    {
+      "id": "saa-473",
+      "exam": "Exam 8",
+      "index": 18,
+      "option": "B",
+      "tail": "ect the ALB to the ElastiCache cluster to serve cached files"
+    },
+    {
+      "id": "saa-473",
+      "exam": "Exam 8",
+      "index": 18,
+      "option": "C",
+      "tail": "ith the ALB. Add a rule to the web ACL to cache static files"
+    },
+    {
+      "id": "saa-473",
+      "exam": "Exam 8",
+      "index": 18,
+      "option": "D",
+      "tail": "raffic to the closest Region to minimize data transfer costs"
+    },
+    {
+      "id": "saa-474",
+      "exam": "Exam 8",
+      "index": 19,
+      "option": "D",
+      "tail": "to connect VPCs across Regions and manage VPC communications"
+    },
+    {
+      "id": "saa-475",
+      "exam": "Exam 8",
+      "index": 20,
+      "option": "A",
+      "tail": "mazon FSx for Windows File Server with a Multi-AZ deployment"
+    },
+    {
+      "id": "saa-475",
+      "exam": "Exam 8",
+      "index": 20,
+      "option": "B",
+      "tail": "Amazon FSx for NetApp ONTAP with a Multi-AZ deployment"
+    },
+    {
+      "id": "saa-475",
+      "exam": "Exam 8",
+      "index": 20,
+      "option": "C",
+      "tail": "tic File System (Amazon EFS) with the Standard storage class"
+    },
+    {
+      "id": "saa-475",
+      "exam": "Exam 8",
+      "index": 20,
+      "option": "D",
+      "tail": "Amazon FSx for OpenZFS"
+    },
+    {
+      "id": "saa-476",
+      "exam": "Exam 8",
+      "index": 21,
+      "option": "A",
+      "tail": "service control policies (SCPs) to manage access permissions"
+    },
+    {
+      "id": "saa-476",
+      "exam": "Exam 8",
+      "index": 21,
+      "option": "B",
+      "tail": "ast privilege permission. Attach the roles to the IAM groups"
+    },
+    {
+      "id": "saa-476",
+      "exam": "Exam 8",
+      "index": 21,
+      "option": "C",
+      "tail": "st privilege permission. Attach the policy to the IAM groups"
+    },
+    {
+      "id": "saa-476",
+      "exam": "Exam 8",
+      "index": 21,
+      "option": "D",
+      "tail": " a permissions boundary that defines the maximum permissions"
+    },
+    {
+      "id": "saa-479",
+      "exam": "Exam 8",
+      "index": 24,
+      "option": "A",
+      "tail": "ision the prototype infrastructure in two Availability Zones"
+    },
+    {
+      "id": "saa-480",
+      "exam": "Exam 8",
+      "index": 25,
+      "option": "B",
+      "tail": "VPC endpoint"
+    },
+    {
+      "id": "saa-480",
+      "exam": "Exam 8",
+      "index": 25,
+      "option": "C",
+      "tail": "Private subnet"
+    },
+    {
+      "id": "saa-480",
+      "exam": "Exam 8",
+      "index": 25,
+      "option": "D",
+      "tail": "Virtual private gateway"
+    },
+    {
+      "id": "saa-481",
+      "exam": "Exam 8",
+      "index": 26,
+      "option": "A",
+      "tail": "Implement the lazy loading caching strategy"
+    },
+    {
+      "id": "saa-481",
+      "exam": "Exam 8",
+      "index": 26,
+      "option": "B",
+      "tail": "Implement the write-through caching strategy"
+    },
+    {
+      "id": "saa-481",
+      "exam": "Exam 8",
+      "index": 26,
+      "option": "C",
+      "tail": "Implement the adding TTL caching strategy"
+    },
+    {
+      "id": "saa-481",
+      "exam": "Exam 8",
+      "index": 26,
+      "option": "D",
+      "tail": "Implement the AWS AppConfig caching strategy"
+    },
+    {
+      "id": "saa-482",
+      "exam": "Exam 8",
+      "index": 27,
+      "option": "A",
+      "tail": "and in the AWS CLI to move the data directly to an S3 bucket"
+    },
+    {
+      "id": "saa-482",
+      "exam": "Exam 8",
+      "index": 27,
+      "option": "B",
+      "tail": "grate the data from the on-premises location to an S3 bucket"
+    },
+    {
+      "id": "saa-482",
+      "exam": "Exam 8",
+      "index": 27,
+      "option": "C",
+      "tail": "Use AWS Snowball to move the data to an S3 bucket"
+    },
+    {
+      "id": "saa-482",
+      "exam": "Exam 8",
+      "index": 27,
+      "option": "D",
+      "tail": "and in the AWS CLI to move the data directly to an S3 bucket"
+    },
+    {
+      "id": "saa-487",
+      "exam": "Exam 8",
+      "index": 32,
+      "option": "A",
+      "tail": "Amazon FSx Multi-AZ deployments"
+    },
+    {
+      "id": "saa-487",
+      "exam": "Exam 8",
+      "index": 32,
+      "option": "B",
+      "tail": "Amazon Elastic Block Store (Amazon EBS) Multi-Attach volumes"
+    },
+    {
+      "id": "saa-487",
+      "exam": "Exam 8",
+      "index": 32,
+      "option": "C",
+      "tail": "Elastic File System (Amazon EFS) with multiple mount targets"
+    },
+    {
+      "id": "saa-487",
+      "exam": "Exam 8",
+      "index": 32,
+      "option": "D",
+      "tail": "n EFS) with a single mount target and multiple access points"
+    },
+    {
+      "id": "saa-502",
+      "exam": "Exam 8",
+      "index": 47,
+      "option": "A",
+      "tail": "to an Amazon S3 bucket that is mounted on every EC2 instance"
+    },
+    {
+      "id": "saa-504",
+      "exam": "Exam 8",
+      "index": 49,
+      "option": "A",
+      "tail": "etween each VPC. Update each associated subnet’s route table"
+    },
+    {
+      "id": "saa-504",
+      "exam": "Exam 8",
+      "index": 49,
+      "option": "B",
+      "tail": "gateway in each VPC to connect each VPC through the internet"
+    },
+    {
+      "id": "saa-511",
+      "exam": "Exam 8",
+      "index": 56,
+      "option": "A",
+      "tail": "t environment with its own Amazon Aurora PostgreSQL database"
+    },
+    {
+      "id": "saa-511",
+      "exam": "Exam 8",
+      "index": 56,
+      "option": "B",
+      "tail": "ith its own Amazon RDS for PostgreSQL Single-AZ DB instances"
+    },
+    {
+      "id": "saa-511",
+      "exam": "Exam 8",
+      "index": 56,
+      "option": "C",
+      "tail": "s own Amazon Aurora On-Demand PostgreSQL-Compatible database"
+    },
+    {
+      "id": "saa-511",
+      "exam": "Exam 8",
+      "index": 56,
+      "option": "D",
+      "tail": "th its own Amazon S3 bucket by using Amazon S3 Object Select"
+    },
+    {
+      "id": "saa-515",
+      "exam": "Exam 8",
+      "index": 60,
+      "option": "A",
+      "tail": "th traditional, containerized, and event-driven applications"
+    },
+    {
+      "id": "saa-515",
+      "exam": "Exam 8",
+      "index": 60,
+      "option": "B",
+      "tail": "Supporting client-side and server-side encryption"
+    },
+    {
+      "id": "saa-515",
+      "exam": "Exam 8",
+      "index": 60,
+      "option": "C",
+      "tail": "uring specified hours and when the application is not active"
+    },
+    {
+      "id": "saa-515",
+      "exam": "Exam 8",
+      "index": 60,
+      "option": "D",
+      "tail": "Caching data to reduce the pressure on the backend database"
+    },
+    {
+      "id": "saa-515",
+      "exam": "Exam 8",
+      "index": 60,
+      "option": "E",
+      "tail": "etabytes of data and tens of millions of requests per minute"
+    },
+    {
+      "id": "saa-515",
+      "exam": "Exam 8",
+      "index": 60,
+      "option": "F",
+      "tail": "y replica of the cluster by using the AWS Management Console"
+    },
+    {
+      "id": "saa-518",
+      "exam": "Exam 8",
+      "index": 63,
+      "option": "A",
+      "tail": "Enable storage autoscaling in RDS"
+    },
+    {
+      "id": "saa-518",
+      "exam": "Exam 8",
+      "index": 63,
+      "option": "B",
+      "tail": "Increase the RDS database instance size"
+    },
+    {
+      "id": "saa-518",
+      "exam": "Exam 8",
+      "index": 63,
+      "option": "C",
+      "tail": "e the RDS database instance storage type to Provisioned IOPS"
+    },
+    {
+      "id": "saa-518",
+      "exam": "Exam 8",
+      "index": 63,
+      "option": "D",
+      "tail": "pacity, restore the database, and stop the previous instance"
+    },
+    {
+      "id": "saa-523",
+      "exam": "Exam 9",
+      "index": 3,
+      "option": "A",
+      "tail": "AWS AppSync pipeline resolvers"
+    },
+    {
+      "id": "saa-523",
+      "exam": "Exam 9",
+      "index": 3,
+      "option": "B",
+      "tail": "Amazon CloudFront with Lambda@Edge functions"
+    },
+    {
+      "id": "saa-523",
+      "exam": "Exam 9",
+      "index": 3,
+      "option": "C",
+      "tail": "Edge-optimized Amazon API Gateway with AWS Lambda functions"
+    },
+    {
+      "id": "saa-523",
+      "exam": "Exam 9",
+      "index": 3,
+      "option": "D",
+      "tail": "Amazon Athena Federated Query with a DynamoDB connector"
+    },
+    {
+      "id": "saa-529",
+      "exam": "Exam 9",
+      "index": 9,
+      "option": "C",
+      "tail": " Amazon S3 Use Amazon Macie for data security and protection"
+    },
+    {
+      "id": "saa-568",
+      "exam": "Exam 9",
+      "index": 48,
+      "option": "A",
+      "tail": "Amazon S3 with Amazon CloudFront"
+    },
+    {
+      "id": "saa-568",
+      "exam": "Exam 9",
+      "index": 48,
+      "option": "B",
+      "tail": "Amazon S3 Glacier with Amazon ElastiCache"
+    },
+    {
+      "id": "saa-568",
+      "exam": "Exam 9",
+      "index": 48,
+      "option": "C",
+      "tail": "stic Block Store (Amazon EBS) volumes with Amazon CloudFront"
+    },
+    {
+      "id": "saa-568",
+      "exam": "Exam 9",
+      "index": 48,
+      "option": "D",
+      "tail": "AWS Storage Gateway with Amazon ElastiCache"
+    },
+    {
+      "id": "saa-576",
+      "exam": "Exam 9",
+      "index": 56,
+      "option": "A",
+      "tail": "Private endpoint"
+    },
+    {
+      "id": "saa-576",
+      "exam": "Exam 9",
+      "index": 56,
+      "option": "B",
+      "tail": "Regional endpoint"
+    },
+    {
+      "id": "saa-576",
+      "exam": "Exam 9",
+      "index": 56,
+      "option": "C",
+      "tail": "Interface VPC endpoint"
+    },
+    {
+      "id": "saa-576",
+      "exam": "Exam 9",
+      "index": 56,
+      "option": "D",
+      "tail": "Edge-optimized endpoint"
+    },
+    {
+      "id": "saa-620",
+      "exam": "Exam 10",
+      "index": 35,
+      "option": "A",
+      "tail": "Instance store volume"
+    },
+    {
+      "id": "saa-620",
+      "exam": "Exam 10",
+      "index": 35,
+      "option": "C",
+      "tail": "oned IOPS SSD Amazon Elastic Block Store (Amazon EBS) volume"
+    },
+    {
+      "id": "saa-620",
+      "exam": "Exam 10",
+      "index": 35,
+      "option": "D",
+      "tail": "Optimized HDD Amazon Elastic Block Store (Amazon EBS) volume"
+    },
+    {
+      "id": "saa-625",
+      "exam": "Exam 10",
+      "index": 40,
+      "option": "B",
+      "tail": "Configure Application Load Balancers with AWS WAF"
+    },
+    {
+      "id": "saa-625",
+      "exam": "Exam 10",
+      "index": 40,
+      "option": "C",
+      "tail": "Configure Amazon Route 53 with a geolocation policy"
+    },
+    {
+      "id": "saa-625",
+      "exam": "Exam 10",
+      "index": 40,
+      "option": "D",
+      "tail": "Configure Amazon Route 53 with a geoproximity routing policy"
+    },
+    {
+      "id": "saa-626",
+      "exam": "Exam 10",
+      "index": 41,
+      "option": "A",
+      "tail": "e device to perform the online data transfer to an S3 bucket"
+    },
+    {
+      "id": "saa-626",
+      "exam": "Exam 10",
+      "index": 41,
+      "option": "C",
+      "tail": " Gateway to perform the online data transfer to an S3 bucket"
+    },
+    {
+      "id": "saa-636",
+      "exam": "Exam 10",
+      "index": 51,
+      "option": "B",
+      "tail": "ernetes Service (Amazon EKS) before the event runs in Lambda"
+    },
+    {
+      "id": "saa-637",
+      "exam": "Exam 10",
+      "index": 52,
+      "option": "A",
+      "tail": "AWS Fargate"
+    },
+    {
+      "id": "saa-637",
+      "exam": "Exam 10",
+      "index": 52,
+      "option": "B",
+      "tail": "AWS Lambda"
+    },
+    {
+      "id": "saa-637",
+      "exam": "Exam 10",
+      "index": 52,
+      "option": "C",
+      "tail": "Amazon DynamoDB"
+    },
+    {
+      "id": "saa-637",
+      "exam": "Exam 10",
+      "index": 52,
+      "option": "D",
+      "tail": "Amazon EC2 Auto Scaling"
+    },
+    {
+      "id": "saa-639",
+      "exam": "Exam 10",
+      "index": 54,
+      "option": "A",
+      "tail": "Disable session affinity (sticky sessions) on the ALB"
+    },
+    {
+      "id": "saa-639",
+      "exam": "Exam 10",
+      "index": 54,
+      "option": "C",
+      "tail": "crease the number of EC2 instances in each Availability Zone"
+    },
+    {
+      "id": "saa-639",
+      "exam": "Exam 10",
+      "index": 54,
+      "option": "D",
+      "tail": "the frequency of the health checks on the ALB's target group"
+    },
+    {
+      "id": "saa-640",
+      "exam": "Exam 10",
+      "index": 55,
+      "option": "A",
+      "tail": ":decrypt permission to the Lambda function’s resource policy"
+    },
+    {
+      "id": "saa-640",
+      "exam": "Exam 10",
+      "index": 55,
+      "option": "B",
+      "tail": "t permission for the Lambda IAM role in the KMS key's policy"
+    },
+    {
+      "id": "saa-650",
+      "exam": "Exam 10",
+      "index": 65,
+      "option": "A",
+      "tail": "crosoft SOL Server. Use read replicas for reporting purposes"
+    },
+    {
+      "id": "saa-650",
+      "exam": "Exam 10",
+      "index": 65,
+      "option": "B",
+      "tail": "azon EC2. Use Always On read replicas for reporting purposes"
+    },
+    {
+      "id": "saa-650",
+      "exam": "Exam 10",
+      "index": 65,
+      "option": "C",
+      "tail": "moDB. Use DynamoDB on-demand replicas for reporting purposes"
+    },
+    {
+      "id": "saa-650",
+      "exam": "Exam 10",
+      "index": 65,
+      "option": "D",
+      "tail": "urora MySQL. Use Aurora read replicas for reporting purposes"
+    },
+    {
+      "id": "saa-655",
+      "exam": "Exam 11",
+      "index": 5,
+      "option": "E",
+      "tail": " web ACL in AWS WAF. Associate the web ACL with the endpoint"
+    },
+    {
+      "id": "saa-659",
+      "exam": "Exam 11",
+      "index": 9,
+      "option": "A",
+      "tail": "AWS DataSync with a VPC endpoint"
+    },
+    {
+      "id": "saa-659",
+      "exam": "Exam 11",
+      "index": 9,
+      "option": "B",
+      "tail": "AWS Direct Connect"
+    },
+    {
+      "id": "saa-659",
+      "exam": "Exam 11",
+      "index": 9,
+      "option": "D",
+      "tail": "AWS Storage Gateway"
+    },
+    {
+      "id": "saa-679",
+      "exam": "Exam 11",
+      "index": 29,
+      "option": "F",
+      "tail": "p solution to tag the objects with a 30-day retention period"
+    }
+  ]
+}

@@ -37,6 +37,21 @@ check("respuestas correctas existen entre las opciones", QUESTIONS.every(
   (q) => q.correct.every((k) => q.options.some((o) => o.k === k))
 ));
 
+console.log("== Integridad del texto (errores de parseo del PDF) ==");
+// Pegados por borrado de marcadores "X. " a mitad de frase (ALB. Use -> ALUse).
+const GLUE_RX = /\b(ALUse|DynamoDUse|DynamoDProvision|NLProcess|VPUpdate|VPModify|CImport)\b/;
+const glued = QUESTIONS.filter((q) =>
+  GLUE_RX.test(q.prompt || "") || GLUE_RX.test(q.explanation || "") ||
+  (q.options || []).some((o) => GLUE_RX.test(o.html || ""))
+);
+check("sin marcadores de opción borrados a mitad de frase", glued.length === 0);
+// Opciones cortadas a mitad de frase (paréntesis sin cerrar o final colgante).
+const DANGLING_RX = /\([^)]*$|[,]$|\b(the|a|an|to|of|with|for|and|or|in|on|by|from|that|is|are|use|each)$/i;
+const truncated = QUESTIONS.filter((q) =>
+  (q.options || []).some((o) => DANGLING_RX.test((o.html || "").trim()))
+);
+check("sin opciones truncadas a mitad de frase (" + truncated.map((q) => q.id).join(",") + ")", truncated.length === 0);
+
 console.log("== Categorías ==");
 const idx = GC.buildCategoryIndex(QUESTIONS);
 check("toda pregunta tiene categoría", QUESTIONS.every((q) => idx.byQ[q.id]));
