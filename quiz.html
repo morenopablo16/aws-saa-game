@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AWS Solutions Architect Associate (SAA-C03) - Practice Quiz</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #111a2e;
+      --text: #e6e9f2;
+      --muted: #a9b1c7;
+      --border: rgba(255,255,255,.10);
+      --ok: #2ea043;
+      --bad: #f85149;
+      --btn: #1f6feb;
+      --btn2: #30363d;
+      --ring: rgba(31,111,235,.35);
+      --aws-orange: #ff9900;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% 0%, rgba(255,153,0,.15), transparent 60%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(31,111,235,.12), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 18px; }
+    .top { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .title { font-weight: 800; font-size: 18px; letter-spacing: .2px; }
+    .panel { background: rgba(17,26,46,.92); border: 1px solid var(--border); border-radius: 14px; padding: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.22); }
+    .grid { display: grid; grid-template-columns: 390px 1fr; gap: 14px; }
+    @media (max-width: 980px) { .grid { grid-template-columns: 1fr; } }
+
+    label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    select, input[type=number] {
+      width: 100%;
+      padding: 10px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(13,21,40,.9);
+      color: var(--text);
+      outline: none;
+    }
+    select:focus, input[type=number]:focus { box-shadow: 0 0 0 4px var(--ring); border-color: rgba(31,111,235,.55); }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+    .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    @media (max-width: 760px) { .row3 { grid-template-columns: 1fr; } }
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
+
+    .btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    button { border: 0; padding: 10px 12px; border-radius: 12px; color: white; cursor: pointer; font-weight: 700; letter-spacing: .2px; }
+    .primary { background: linear-gradient(180deg, rgba(255,153,0,1), rgba(255,153,0,.86)); color: #000; }
+    .secondary { background: rgba(48,54,61,.85); border: 1px solid var(--border); }
+    button:hover:not(:disabled) { filter: brightness(1.05); }
+    button:active:not(:disabled) { transform: translateY(1px); }
+    button:disabled { opacity: .55; cursor: not-allowed; }
+
+    .meta { display: flex; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: 13px; }
+    .qtitle { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
+    .prompt { font-size: 16px; line-height: 1.45; }
+    .opts { margin-top: 12px; display: grid; gap: 8px; }
+    .opt { display: flex; gap: 10px; align-items: flex-start; padding: 11px; border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,.025); cursor: pointer; }
+    .opt:hover { border-color: rgba(255,153,0,.35); background: rgba(255,153,0,.05); }
+    .opt.correct { border-color: rgba(46,160,67,.55); background: rgba(46,160,67,.10); }
+    .opt.wrong { border-color: rgba(248,81,73,.55); background: rgba(248,81,73,.08); }
+    .opt input { margin-top: 3px; }
+    .optk { width: 26px; color: var(--muted); font-weight: 700; }
+    .result { margin-top: 12px; padding: 10px; border-radius: 12px; border: 1px solid var(--border); }
+    .result.ok { border-color: rgba(46,160,67,.55); }
+    .result.bad { border-color: rgba(248,81,73,.55); }
+    .explain { margin-top: 10px; color: var(--muted); font-size: 13px; line-height: 1.35; }
+    .footer { margin-top: 10px; color: var(--muted); font-size: 12px; }
+    .timer-warning { color: var(--bad); font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="title">🏗️ AWS Solutions Architect Associate (SAA-C03)</div>
+      <a href="game.html" style="color: var(--aws-orange); font-weight: 700; font-size: 13px; text-decoration: none; border: 1px solid rgba(255,153,0,.45); padding: 6px 10px; border-radius: 10px;">🎮 Modo juego</a>
+      <div class="meta">
+        <div id="metaCount"></div>
+        <div id="metaScore"></div>
+        <div id="metaTimer"></div>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top: 14px;">
+      <div class="panel">
+        <div class="row3">
+          <div>
+            <label for="modeSelect">Mode</label>
+            <select id="modeSelect">
+              <option value="normal" selected>Normal</option>
+              <option value="review_wrong">Review wrong</option>
+              <option value="review_done">Redo done</option>
+              <option value="mock_exam">Mock exam (50 timed)</option>
+            </select>
+          </div>
+          <div>
+            <label for="countSelect">Questions</label>
+            <select id="countSelect">
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="25">25</option>
+              <option value="50" selected>50</option>
+              <option value="all">All</option>
+            </select>
+          </div>
+          <div>
+            <label for="shuffleSelect">Order</label>
+            <select id="shuffleSelect">
+              <option value="shuffle" selected>Shuffle</option>
+              <option value="inorder">In order</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px;">
+          <div>
+            <label>Exam Packages (select to include)</label>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; padding: 8px; border: 1px solid var(--border); border-radius: 12px; background: rgba(13,21,40,.9);">
+              <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam1" checked> <span>Exam 1</span></label>
+              <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam2" checked> <span>Exam 2</span></label>
+              <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam3" checked> <span>Exam 3</span></label>
+              <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam4" checked> <span>Exam 4</span></label>
+              <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam5" checked> <span>Exam 5</span></label>
+              <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam6" checked> <span>Exam 6</span></label>
+              <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam7" checked> <span>Exam 7</span></label>
+              <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam8" checked> <span>Exam 8</span></label>
+              <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam9" checked> <span>Exam 9</span></label>
+              <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam10" checked> <span>Exam 10</span></label>
+              <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam11" checked> <span>Exam 11</span></label>
+            </div>
+          </div>
+          <div>
+            <label for="revealSelect">Reveal</label>
+            <select id="revealSelect">
+              <option value="after" selected>After submit</option>
+              <option value="immediate">Immediately</option>
+            </select>
+          </div>
+          <div>
+            <label for="offsetInput">Offset (start #)</label>
+            <input id="offsetInput" type="number" min="1" step="1" value="1"/>
+          </div>
+          <div>
+            <label for="timeInput">Time limit (min)</label>
+            <input id="timeInput" type="number" min="1" step="1" value="130"/>
+          </div>
+        </div>
+
+        <div class="btns">
+          <button class="primary" id="startBtn">Start set</button>
+          <button class="secondary" id="resetBtn" disabled>Reset</button>
+        </div>
+
+        <div class="footer" id="selectionStats"></div>
+        <div class="footer">Works offline. Progress saved in browser.</div>
+      </div>
+
+      <div class="panel">
+        <div class="qtitle" id="qTitle">Start a set to begin.</div>
+        <div class="prompt" id="qPrompt"></div>
+        <div class="opts" id="qOptions"></div>
+
+        <div class="btns">
+          <button class="primary" id="submitBtn" disabled>Submit</button>
+          <button class="secondary" id="nextBtn" disabled>Next</button>
+        </div>
+
+        <div id="result"></div>
+      </div>
+    </div>
+  </div>
+
+<script src="quiz-data-all.js"></script>
+<script>
+  const WRONG_KEY = "aws_saa_wrong_ids_v1";
+  const SEEN_KEY = "aws_saa_seen_ids_v1";
+  const $ = (id) => document.getElementById(id);
+
+  function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function setText(el, txt) { el.textContent = txt; }
+  function setHTML(el, html) { el.innerHTML = html || ""; }
+
+  function loadWrongIds() {
+    try {
+      const raw = localStorage.getItem(WRONG_KEY);
+      if (!raw) return new Set();
+      const arr = JSON.parse(raw);
+      return Array.isArray(arr) ? new Set(arr.filter(x => typeof x === "string")) : new Set();
+    } catch { return new Set(); }
+  }
+
+  function saveWrongIds(set) {
+    try { localStorage.setItem(WRONG_KEY, JSON.stringify(Array.from(set))); } catch {}
+  }
+
+  function loadSeenIds() {
+    try {
+      const raw = localStorage.getItem(SEEN_KEY);
+      if (!raw) return new Set();
+      const arr = JSON.parse(raw);
+      return Array.isArray(arr) ? new Set(arr.filter(x => typeof x === "string")) : new Set();
+    } catch { return new Set(); }
+  }
+
+  function saveSeenIds(set) {
+    try { localStorage.setItem(SEEN_KEY, JSON.stringify(Array.from(set))); } catch {}
+  }
+
+  function currentMode() { return $("modeSelect").value; }
+
+  function getSelectedExams() {
+    const exams = [];
+    for (let i = 1; i <= 11; i++) {
+      if ($(`exam${i}`)?.checked) exams.push(`Exam ${i}`);
+    }
+    return exams.length > 0 ? exams : ["Exam 1", "Exam 2", "Exam 3", "Exam 4", "Exam 5", "Exam 6", "Exam 7", "Exam 8", "Exam 9", "Exam 10", "Exam 11"];
+  }
+
+  function getFilteredQuestions() {
+    const selectedExams = getSelectedExams();
+    const allQuestions = (typeof QUESTIONS !== 'undefined' ? QUESTIONS : []);
+    return allQuestions.filter(q => selectedExams.includes(q.exam));
+  }
+
+  function updateSelectionStats() {
+    const mode = currentMode();
+    const all = getFilteredQuestions();
+    const wrong = loadWrongIds();
+    const seen = loadSeenIds();
+    let wrongCount = 0, seenCount = 0;
+    for (const q of all) {
+      if (wrong.has(q.id)) wrongCount++;
+      if (seen.has(q.id)) seenCount++;
+    }
+    let pool = all.length;
+    if (mode === "review_wrong") pool = wrongCount;
+    else if (mode === "review_done") pool = seenCount;
+    setText($("selectionStats"), `Questions: ${all.length} • Done: ${seenCount} • Wrong: ${wrongCount} • Pool: ${pool}`);
+    $("startBtn").disabled = (all.length === 0);
+  }
+
+  function isMulti(q) { return (q.correct || []).length > 1; }
+
+  let state = { set: [], idx: 0, score: 0, answered: 0, locked: false, timerId: null, deadlineMs: null };
+
+  function clearTimer() {
+    if (state.timerId) { clearInterval(state.timerId); state.timerId = null; }
+    state.deadlineMs = null;
+    setText($("metaTimer"), "");
+  }
+
+  function fmtTime(seconds) {
+    const s = Math.max(0, Math.floor(seconds));
+    const mm = String(Math.floor(s / 60)).padStart(2, "0");
+    const ss = String(s % 60).padStart(2, "0");
+    return `${mm}:${ss}`;
+  }
+
+  function startTimer(minutes) {
+    clearTimer();
+    const mins = Math.max(1, Math.floor(minutes || 130));
+    state.deadlineMs = Date.now() + mins * 60 * 1000;
+    const tick = () => {
+      if (!state.deadlineMs) return;
+      const left = Math.ceil((state.deadlineMs - Date.now()) / 1000);
+      setText($("metaTimer"), `Time ${fmtTime(left)}`);
+      if (left <= 0) {
+        clearTimer();
+        setText($("qTitle"), "Time is up");
+        setHTML($("qPrompt"), `<div style="font-weight:700; font-size:18px;">Time limit reached.</div><div style="margin-top:8px; color: var(--muted);">Final score: <b>${state.score}/${state.answered}</b></div>`);
+        $("qOptions").innerHTML = "";
+        setHTML($("result"), "");
+        $("submitBtn").disabled = true;
+        $("nextBtn").disabled = true;
+        updateMeta();
+      }
+    };
+    tick();
+    state.timerId = setInterval(tick, 1000);
+  }
+
+  function updateMeta() {
+    const total = state.set.length;
+    const cur = total ? (state.idx + 1) : 0;
+    setText($("metaCount"), total ? `Q ${cur}/${total}` : "");
+    setText($("metaScore"), total ? `Score ${state.score}/${state.answered}` : "");
+  }
+
+  function renderQuestion() {
+    const q = state.set[state.idx];
+    if (!q) return;
+    state.locked = false;
+    setHTML($("result"), "");
+    setText($("qTitle"), `${q.exam} — Question ${q.index}`);
+    setHTML($("qPrompt"), q.prompt);
+    const multi = isMulti(q);
+    const type = multi ? "checkbox" : "radio";
+    const wrap = $("qOptions");
+    wrap.innerHTML = "";
+    for (const opt of q.options || []) {
+      const row = document.createElement("label");
+      row.className = "opt";
+      row.dataset.k = opt.k;
+      const input = document.createElement("input");
+      input.type = type;
+      input.name = "opt";
+      input.value = opt.k;
+      const k = document.createElement("div");
+      k.className = "optk";
+      k.textContent = opt.k;
+      const txt = document.createElement("div");
+      txt.textContent = opt.html;
+      row.appendChild(input);
+      row.appendChild(k);
+      row.appendChild(txt);
+      wrap.appendChild(row);
+    }
+    $("submitBtn").disabled = false;
+    $("nextBtn").disabled = true;
+    updateMeta();
+  }
+
+  function selectedLetters() {
+    const inputs = Array.from($("qOptions").querySelectorAll("input"));
+    return inputs.filter(i => i.checked).map(i => i.value).sort();
+  }
+
+  function sameSet(a, b) {
+    if (a.length !== b.length) return false;
+    for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+    return true;
+  }
+
+  function reveal(correct, chosen) {
+    const q = state.set[state.idx];
+    const opts = Array.from($("qOptions").querySelectorAll(".opt"));
+    const correctSet = new Set(correct);
+    const chosenSet = new Set(chosen);
+    for (const el of opts) {
+      const k = el.dataset.k;
+      el.classList.remove("correct", "wrong");
+      if (correctSet.has(k)) el.classList.add("correct");
+      else if (chosenSet.has(k) && !correctSet.has(k)) el.classList.add("wrong");
+    }
+    const ok = sameSet(correct, chosen);
+    const res = document.createElement("div");
+    res.className = "result " + (ok ? "ok" : "bad");
+    const correctTxt = correct?.length ? correct.join(", ") : "(missing)";
+    const chosenTxt = chosen?.length ? chosen.join(", ") : "(none)";
+    res.innerHTML = `<div style="font-weight:700; margin-bottom:6px;">${ok ? "Correct" : "Incorrect"}</div>` +
+                    `<div style="color: var(--muted);">Your answer: <b>${chosenTxt}</b> — Correct: <b>${correctTxt}</b></div>`;
+    if (q.explanation) {
+      const expl = document.createElement("div");
+      expl.className = "explain";
+      expl.innerHTML = `<div style="font-weight:700; color: var(--text); margin-bottom:4px;">Explanation</div>${q.explanation}`;
+      res.appendChild(expl);
+    }
+    $("result").innerHTML = "";
+    $("result").appendChild(res);
+  }
+
+  function lockInputs() { for (const i of $("qOptions").querySelectorAll("input")) i.disabled = true; }
+  function unlockInputs() { for (const i of $("qOptions").querySelectorAll("input")) i.disabled = false; }
+
+  function submit() {
+    const q = state.set[state.idx];
+    if (!q || state.locked) return;
+    const chosen = selectedLetters();
+    const correct = (q.correct || []).slice().sort();
+    const ok = sameSet(correct, chosen);
+    state.answered += 1;
+    if (ok) state.score += 1;
+    const seen = loadSeenIds();
+    seen.add(q.id);
+    saveSeenIds(seen);
+    const wrong = loadWrongIds();
+    if (ok) wrong.delete(q.id);
+    else wrong.add(q.id);
+    saveWrongIds(wrong);
+    updateSelectionStats();
+    reveal(correct, chosen);
+    lockInputs();
+    state.locked = true;
+    $("submitBtn").disabled = true;
+    $("nextBtn").disabled = false;
+    updateMeta();
+  }
+
+  function next() {
+    if (!state.set.length) return;
+    if (state.idx + 1 >= state.set.length) {
+      clearTimer();
+      setText($("qTitle"), "Set complete");
+      setHTML($("qPrompt"), `<div style="font-weight:700; font-size:18px;">Done.</div><div style="margin-top:8px; color: var(--muted);">Final score: <b>${state.score}/${state.answered}</b></div>`);
+      $("qOptions").innerHTML = "";
+      setHTML($("result"), "");
+      $("submitBtn").disabled = true;
+      $("nextBtn").disabled = true;
+      updateMeta();
+      return;
+    }
+    state.idx += 1;
+    unlockInputs();
+    renderQuestion();
+  }
+
+  function startSet() {
+    const mode = currentMode();
+    const countSel = $("countSelect").value;
+    const order = $("shuffleSelect").value;
+    let pool = [...getFilteredQuestions()];
+    if (mode === "review_wrong") {
+      const wrong = loadWrongIds();
+      pool = pool.filter(q => wrong.has(q.id));
+    }
+    if (mode === "review_done") {
+      const seen = loadSeenIds();
+      pool = pool.filter(q => seen.has(q.id));
+    }
+    if (mode === "mock_exam") {
+      pool = shuffle(pool.slice());
+    } else if (order === "shuffle") {
+      pool = shuffle(pool.slice());
+    }
+    let take = pool.length;
+    if (mode === "mock_exam") {
+      take = Math.min(50, pool.length);
+    } else if (countSel !== "all") {
+      const n = parseInt(countSel, 10);
+      if (!Number.isNaN(n)) take = Math.min(n, pool.length);
+    }
+    let startAt = 0;
+    if (mode !== "review_wrong" && mode !== "mock_exam") {
+      const offset = parseInt($("offsetInput").value || "1", 10);
+      if (!Number.isNaN(offset) && offset > 1) startAt = Math.min(offset - 1, pool.length - 1);
+    }
+    state.set = pool.slice(startAt, startAt + take);
+    state.idx = 0;
+    state.score = 0;
+    state.answered = 0;
+    state.locked = false;
+    $("resetBtn").disabled = false;
+    if (mode === "mock_exam") {
+      startTimer(parseInt($("timeInput").value || "130", 10));
+    } else {
+      clearTimer();
+    }
+    renderQuestion();
+  }
+
+  function reset() {
+    clearTimer();
+    state = { set: [], idx: 0, score: 0, answered: 0, locked: false, timerId: null, deadlineMs: null };
+    setText($("qTitle"), "Start a set to begin.");
+    setHTML($("qPrompt"), "");
+    $("qOptions").innerHTML = "";
+    setHTML($("result"), "");
+    $("submitBtn").disabled = true;
+    $("nextBtn").disabled = true;
+    $("resetBtn").disabled = true;
+    updateMeta();
+    updateSelectionStats();
+  }
+
+  $("startBtn").addEventListener("click", startSet);
+  $("resetBtn").addEventListener("click", reset);
+  $("submitBtn").addEventListener("click", submit);
+  $("nextBtn").addEventListener("click", next);
+  $("modeSelect").addEventListener("change", updateSelectionStats);
+  for (let i = 1; i <= 11; i++) {
+    $(`exam${i}`)?.addEventListener("change", updateSelectionStats);
+  }
+
+  updateSelectionStats();
+</script>
+</body>
+</html>

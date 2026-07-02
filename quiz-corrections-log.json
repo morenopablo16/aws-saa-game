@@ -1,0 +1,1852 @@
+[
+  {
+    "id": "saa-4",
+    "exam": "Exam 1",
+    "index": 4,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "An application runs on an Amazon EC2 instance in a VPC. The application processes logs that are stored in an Amazon S3 bucket. The EC2 instance needs to access the S3 bucket withou"
+  },
+  {
+    "id": "saa-10",
+    "exam": "Exam 1",
+    "index": 10,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is building an ecommerce web application on AWS. The application sends information about new orders to an Amazon API Gateway REST API to process. The company wants to ens"
+  },
+  {
+    "id": "saa-12",
+    "exam": "Exam 1",
+    "index": 12,
+    "old_correct": "D",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A global company hosts its web application on Amazon EC2 instances behind an Application Load Balancer (ALB). The web application has static data and dynamic data. The company stor"
+  },
+  {
+    "id": "saa-13",
+    "exam": "Exam 1",
+    "index": 13,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company performs monthly maintenance on its AWS infrastructure. During these maintenance activities, the company needs to rotate the credentials for its Amazon RDS for MySQL data"
+  },
+  {
+    "id": "saa-16",
+    "exam": "Exam 1",
+    "index": 16,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company hosts a data lake on AWS. The data lake consists of data in Amazon S3 and Amazon RDS for PostgreSQL. The company needs a reporting solution that provides data visualizati"
+  },
+  {
+    "id": "saa-18",
+    "exam": "Exam 1",
+    "index": 18,
+    "old_correct": "C",
+    "new_correct": "A,B",
+    "method": "dot",
+    "evidence": "A,B",
+    "prompt": "An application development team is designing a microservice that will convert large images to smaller, compressed images. When a user uploads an image through the web interface, th"
+  },
+  {
+    "id": "saa-23",
+    "exam": "Exam 1",
+    "index": 23,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is storing backup files by using Amazon S3 Standard storage. The files are accessed frequently for 1 month. However, the files are not accessed after 1 month. The company"
+  },
+  {
+    "id": "saa-26",
+    "exam": "Exam 1",
+    "index": 26,
+    "old_correct": "D",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company needs to review its AWS Cloud deployment to ensure that its Amazon S3 buckets do not have unauthorized configuration changes. What should a solutions architect do to acco"
+  },
+  {
+    "id": "saa-34",
+    "exam": "Exam 1",
+    "index": 34,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company hosts its multi-tier applications on AWS. For compliance, governance, auditing, and security, the company must track configuration changes on its AWS resources and record"
+  },
+  {
+    "id": "saa-40",
+    "exam": "Exam 1",
+    "index": 40,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company has thousands of edge devices that collectively generate 1 TB of status alerts each day. Each alert is approximately 2 KB in size. A solutions architect needs to implemen"
+  },
+  {
+    "id": "saa-44",
+    "exam": "Exam 1",
+    "index": 44,
+    "old_correct": "A",
+    "new_correct": "A,B",
+    "method": "dot",
+    "evidence": "A,B",
+    "prompt": "A company has an Amazon S3 bucket that contains critical data. The company must protect the data from accidental deletion. Which combination of steps should a solutions architect t"
+  },
+  {
+    "id": "saa-45",
+    "exam": "Exam 1",
+    "index": 45,
+    "old_correct": "B",
+    "new_correct": "B,E",
+    "method": "dot",
+    "evidence": "B,E",
+    "prompt": "A company has a data ingestion workflow that consists of the following: • An Amazon Simple Notification Service (Amazon SNS) topic for notifications about new data deliveries • An "
+  },
+  {
+    "id": "saa-49",
+    "exam": "Exam 1",
+    "index": 49,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company stores call transcript files on a monthly basis. Users access the files randomly within 1 year of the call, but users access the files infrequently after 1 year. The comp"
+  },
+  {
+    "id": "saa-51",
+    "exam": "Exam 1",
+    "index": 51,
+    "old_correct": "D",
+    "new_correct": "D,B",
+    "method": "dot",
+    "evidence": "D,B",
+    "prompt": "A company is developing an application that provides order shipping statistics for retrieval by a REST API. The company wants to extract the shipping statistics, organize the data "
+  },
+  {
+    "id": "saa-53",
+    "exam": "Exam 1",
+    "index": 53,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company needs to store its accounting records in Amazon S3. The records must be immediately accessible for 1 year and then must be archived for an additional 9 years. No one at t"
+  },
+  {
+    "id": "saa-56",
+    "exam": "Exam 1",
+    "index": 56,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company has registered its domain name with Amazon Route 53. The company uses Amazon API Gateway in the ca-central-1 Region as a public interface for its backend microservice API"
+  },
+  {
+    "id": "saa-58",
+    "exam": "Exam 1",
+    "index": 58,
+    "old_correct": "B",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company wants to run its critical applications in containers to meet requirements for scalability and availability. The company prefers to focus on maintenance of the critical ap"
+  },
+  {
+    "id": "saa-61",
+    "exam": "Exam 1",
+    "index": 61,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company is developing a two-tier web application on AWS. The company's developers have deployed the application on an Amazon EC2 instance that connects directly to a backend Amaz"
+  },
+  {
+    "id": "saa-62",
+    "exam": "Exam 1",
+    "index": 62,
+    "old_correct": "C",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company is deploying a new public web application to AWS. The application will run behind an Application Load Balancer (ALB). The application needs to be encrypted at the edge wi"
+  },
+  {
+    "id": "saa-63",
+    "exam": "Exam 1",
+    "index": 63,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company runs its infrastructure on AWS and has a registered base of 700,000 users for its document management application. The company intends to create a product that converts l"
+  },
+  {
+    "id": "saa-66",
+    "exam": "Exam 2",
+    "index": 1,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company has an application that generates a large number of files, each approximately 5 MB in size. The files are stored in Amazon S3. Company policy requires the files to be sto"
+  },
+  {
+    "id": "saa-68",
+    "exam": "Exam 2",
+    "index": 3,
+    "old_correct": "D",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A solutions architect is designing a new hybrid architecture to extend a company's on-premises infrastructure to AWS. The company requires a highly available connection with consis"
+  },
+  {
+    "id": "saa-69",
+    "exam": "Exam 2",
+    "index": 4,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is running a business-critical web application on Amazon EC2 instances behind an Application Load Balancer. The EC2 instances are in an Auto Scaling group. The applicatio"
+  },
+  {
+    "id": "saa-73",
+    "exam": "Exam 2",
+    "index": 8,
+    "old_correct": "D",
+    "new_correct": "C,D",
+    "method": "dot",
+    "evidence": "C,D",
+    "prompt": "A company recently launched Linux-based application instances on Amazon EC2 in a private subnet and launched a Linux-based bastion host on an Amazon EC2 instance in a public subnet"
+  },
+  {
+    "id": "saa-74",
+    "exam": "Exam 2",
+    "index": 9,
+    "old_correct": "D",
+    "new_correct": "A,C",
+    "method": "dot",
+    "evidence": "A,C",
+    "prompt": "A solutions architect is designing a two-tier web application. The application consists of a public-facing web tier hosted on Amazon EC2 in public subnets. The database tier consis"
+  },
+  {
+    "id": "saa-75",
+    "exam": "Exam 2",
+    "index": 10,
+    "old_correct": "D",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company wants to move a multi-tiered application from on premises to the AWS Cloud to improve the application's performance. The application consists of application tiers that co"
+  },
+  {
+    "id": "saa-85",
+    "exam": "Exam 2",
+    "index": 20,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company has a production web application in which users upload documents through a web interface or a mobile app. According to a new regulatory requirement. new documents cannot "
+  },
+  {
+    "id": "saa-86",
+    "exam": "Exam 2",
+    "index": 21,
+    "old_correct": "D",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company has several web servers that need to frequently access a common Amazon RDS MySQL Multi-AZ DB instance. The company wants a secure method for the web servers to connect to"
+  },
+  {
+    "id": "saa-92",
+    "exam": "Exam 2",
+    "index": 27,
+    "old_correct": "C",
+    "new_correct": "A,C",
+    "method": "dot",
+    "evidence": "A,C",
+    "prompt": "A company is storing sensitive user information in an Amazon S3 bucket. The company wants to provide secure access to this bucket from the application tier running on Amazon EC2 in"
+  },
+  {
+    "id": "saa-100",
+    "exam": "Exam 2",
+    "index": 35,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company's containerized application runs on an Amazon EC2 instance. The application needs to download security certificates before it can communicate with other business applicat"
+  },
+  {
+    "id": "saa-102",
+    "exam": "Exam 2",
+    "index": 37,
+    "old_correct": "A",
+    "new_correct": "A,B",
+    "method": "dot",
+    "evidence": "A,B",
+    "prompt": "A company wants to migrate an on-premises data center to AWS. The data center hosts an SFTP server that stores its data on an NFS-based file system. The server holds 200 GB of data"
+  },
+  {
+    "id": "saa-104",
+    "exam": "Exam 2",
+    "index": 39,
+    "old_correct": "C",
+    "new_correct": "A,C",
+    "method": "dot",
+    "evidence": "A,C",
+    "prompt": "A solutions architect must design a highly available infrastructure for a website. The website is powered by Windows web servers that run on Amazon EC2 instances. The solutions arc"
+  },
+  {
+    "id": "saa-108",
+    "exam": "Exam 2",
+    "index": 43,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company has an automobile sales website that stores its listings in a database on Amazon RDS. When an automobile is sold, the listing needs to be removed from the website and the"
+  },
+  {
+    "id": "saa-110",
+    "exam": "Exam 2",
+    "index": 45,
+    "old_correct": "D",
+    "new_correct": "B,D",
+    "method": "dot",
+    "evidence": "B,D",
+    "prompt": "A social media company allows users to upload images to its website. The website runs on Amazon EC2 instances. During upload requests, the website resizes the images to a standard "
+  },
+  {
+    "id": "saa-113",
+    "exam": "Exam 2",
+    "index": 48,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company uses 50 TB of data for reporting. The company wants to move this data from on premises to AWS. A custom application in the company’s data center runs a weekly data transf"
+  },
+  {
+    "id": "saa-116",
+    "exam": "Exam 2",
+    "index": 51,
+    "old_correct": "D",
+    "new_correct": "A,D",
+    "method": "dot",
+    "evidence": "A,D",
+    "prompt": "A company uses a popular content management system (CMS) for its corporate website. However, the required patching and maintenance are burdensome. The company is redesigning its we"
+  },
+  {
+    "id": "saa-126",
+    "exam": "Exam 2",
+    "index": 61,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A solutions architect needs to implement a solution to reduce a company's storage costs. All the company's data is in the Amazon S3 Standard storage class. The company must keep al"
+  },
+  {
+    "id": "saa-127",
+    "exam": "Exam 2",
+    "index": 62,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A media company is evaluating the possibility of moving its systems to the AWS Cloud. The company needs at least 10 TB of storage with the maximum possible I/O performance for vide"
+  },
+  {
+    "id": "saa-128",
+    "exam": "Exam 2",
+    "index": 63,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company wants to run applications in containers in the AWS Cloud. These applications are stateless and can tolerate disruptions within the underlying infrastructure. The company "
+  },
+  {
+    "id": "saa-129",
+    "exam": "Exam 2",
+    "index": 64,
+    "old_correct": "B",
+    "new_correct": "A,E",
+    "method": "dot",
+    "evidence": "A,E",
+    "prompt": "A company is running a multi-tier web application on premises. The web application is containerized and runs on a number of Linux hosts connected to a PostgreSQL database that cont"
+  },
+  {
+    "id": "saa-133",
+    "exam": "Exam 3",
+    "index": 3,
+    "old_correct": "B",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company runs an Oracle database on premises. As part of the company’s migration to AWS, the company wants to upgrade the database to the most recent available version. The compan"
+  },
+  {
+    "id": "saa-138",
+    "exam": "Exam 3",
+    "index": 8,
+    "old_correct": "A",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company runs its ecommerce application on AWS. Every new order is published as a massage in a RabbitMQ queue that runs on an Amazon EC2 instance in a single Availability Zone. Th"
+  },
+  {
+    "id": "saa-141",
+    "exam": "Exam 3",
+    "index": 11,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company runs a web-based portal that provides users with global breaking news, local alerts, and weather updates. The portal delivers each user a personalized view by using mixtu"
+  },
+  {
+    "id": "saa-143",
+    "exam": "Exam 3",
+    "index": 13,
+    "old_correct": "C",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company wants to migrate its existing on-premises monolithic application to AWS. The company wants to keep as much of the front-end code and the backend code as possible. However"
+  },
+  {
+    "id": "saa-145",
+    "exam": "Exam 3",
+    "index": 15,
+    "old_correct": "C",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company hosts a website analytics application on a single Amazon EC2 On-Demand Instance. The analytics software is written in PHP and uses a MySQL database. The analytics softwar"
+  },
+  {
+    "id": "saa-149",
+    "exam": "Exam 3",
+    "index": 19,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company has a service that produces event data. The company wants to use AWS to process the event data as it is received. The data is written in a specific order that must be mai"
+  },
+  {
+    "id": "saa-156",
+    "exam": "Exam 3",
+    "index": 26,
+    "old_correct": "D",
+    "new_correct": "A,C",
+    "method": "dot",
+    "evidence": "A,C",
+    "prompt": "A company produces batch data that comes from different databases. The company also produces live stream data from network sensors and application APIs. The company needs to consol"
+  },
+  {
+    "id": "saa-161",
+    "exam": "Exam 3",
+    "index": 31,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company has a small Python application that processes JSON documents and outputs the results to an on-premises SQL database. The application runs thousands of times each day. The"
+  },
+  {
+    "id": "saa-167",
+    "exam": "Exam 3",
+    "index": 37,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company runs a production application on a fleet of Amazon EC2 instances. The application reads the data from an Amazon SQS queue and processes the messages in parallel. The mess"
+  },
+  {
+    "id": "saa-171",
+    "exam": "Exam 3",
+    "index": 41,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company provides an API to its users that automates inquiries for tax computations based on item prices. The company experiences a larger number of inquiries during the holiday s"
+  },
+  {
+    "id": "saa-174",
+    "exam": "Exam 3",
+    "index": 44,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company has a multi-tier application that runs six front-end web servers in an Amazon EC2 Auto Scaling group in a single Availability Zone behind an Application Load Balancer (AL"
+  },
+  {
+    "id": "saa-180",
+    "exam": "Exam 3",
+    "index": 50,
+    "old_correct": "C",
+    "new_correct": "B,C",
+    "method": "dot",
+    "evidence": "B,C",
+    "prompt": "A company is designing a cloud communications platform that is driven by APIs. The application is hosted on Amazon EC2 instances behind a Network Load Balancer (NLB). The company u"
+  },
+  {
+    "id": "saa-182",
+    "exam": "Exam 3",
+    "index": 52,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company wants to migrate its MySQL database from on premises to AWS. The company recently experienced a database outage that significantly impacted the business. To ensure this d"
+  },
+  {
+    "id": "saa-185",
+    "exam": "Exam 3",
+    "index": 55,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company runs an application using Amazon ECS. The application creates resized versions of an original image and then makes Amazon S3 API calls to store the resized images in Amaz"
+  },
+  {
+    "id": "saa-187",
+    "exam": "Exam 3",
+    "index": 57,
+    "old_correct": "D",
+    "new_correct": "A,D",
+    "method": "dot",
+    "evidence": "A,D",
+    "prompt": "A company is developing an ecommerce application that will consist of a load-balanced front end, a container-based application, and a relational database. A solutions architect nee"
+  },
+  {
+    "id": "saa-188",
+    "exam": "Exam 3",
+    "index": 58,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company uses Amazon S3 as its data lake. The company has a new partner that must use SFTP to upload data files. A solutions architect needs to implement a highly available SFTP s"
+  },
+  {
+    "id": "saa-189",
+    "exam": "Exam 3",
+    "index": 59,
+    "old_correct": "D",
+    "new_correct": "B,D",
+    "method": "dot",
+    "evidence": "B,D",
+    "prompt": "A company needs to store contract documents. A contract lasts for 5 years. During the 5-year period, the company must ensure that the documents cannot be overwritten or deleted. Th"
+  },
+  {
+    "id": "saa-190",
+    "exam": "Exam 3",
+    "index": 60,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company has a web application that is based on Java and PHP. The company plans to move the application from on premises to AWS. The company needs the ability to test new site fea"
+  },
+  {
+    "id": "saa-202",
+    "exam": "Exam 4",
+    "index": 7,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is planning to move its data to an Amazon S3 bucket. The data must be encrypted when it is stored in the S3 bucket. Additionally, the encryption key must be automatically"
+  },
+  {
+    "id": "saa-216",
+    "exam": "Exam 4",
+    "index": 21,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company has a serverless website with millions of objects in an Amazon S3 bucket. The company uses the S3 bucket as the origin for an Amazon CloudFront distribution. The company "
+  },
+  {
+    "id": "saa-218",
+    "exam": "Exam 4",
+    "index": 23,
+    "old_correct": "D",
+    "new_correct": "A,E",
+    "method": "dot",
+    "evidence": "A,E",
+    "prompt": "A company has a web server running on an Amazon EC2 instance in a public subnet with an Elastic IP address. The default security group is assigned to the EC2 instance. The default "
+  },
+  {
+    "id": "saa-223",
+    "exam": "Exam 4",
+    "index": 28,
+    "old_correct": "D",
+    "new_correct": "A,D",
+    "method": "dot",
+    "evidence": "A,D",
+    "prompt": "A company has deployed a Java Spring Boot application as a pod that runs on Amazon Elastic Kubernetes Service (Amazon EKS) in private subnets. The application needs to write data t"
+  },
+  {
+    "id": "saa-226",
+    "exam": "Exam 4",
+    "index": 31,
+    "old_correct": "D",
+    "new_correct": "A,E",
+    "method": "dot",
+    "evidence": "A,E",
+    "prompt": "A company collects data from thousands of remote devices by using a RESTful web services application that runs on an Amazon EC2 instance. The EC2 instance receives the raw data, tr"
+  },
+  {
+    "id": "saa-228",
+    "exam": "Exam 4",
+    "index": 33,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company has an API that receives real-time data from a fleet of monitoring devices. The API stores this data in an Amazon RDS DB instance for later analysis. The amount of data t"
+  },
+  {
+    "id": "saa-229",
+    "exam": "Exam 4",
+    "index": 34,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company manages its own Amazon EC2 instances that run MySQL databases. The company is manually managing replication and scaling as demand increases or decreases. The company need"
+  },
+  {
+    "id": "saa-232",
+    "exam": "Exam 4",
+    "index": 37,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company runs demonstration environments for its customers on Amazon EC2 instances. Each environment is isolated in its own VPC. The company’s operations team needs to be notified"
+  },
+  {
+    "id": "saa-233",
+    "exam": "Exam 4",
+    "index": 38,
+    "old_correct": "B",
+    "new_correct": "A,B",
+    "method": "dot",
+    "evidence": "A,B",
+    "prompt": "A solutions architect has created a new AWS account and must secure AWS account root user access. Which combination of actions will accomplish this? (Choose two.)"
+  },
+  {
+    "id": "saa-243",
+    "exam": "Exam 4",
+    "index": 48,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A medical research lab produces data that is related to a new study. The lab wants to make the data available with minimum latency to clinics across the country for their on-premis"
+  },
+  {
+    "id": "saa-246",
+    "exam": "Exam 4",
+    "index": 51,
+    "old_correct": "C",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company runs a web application on Amazon EC2 instances in multiple Availability Zones. The EC2 instances are in private subnets. A solutions architect implements an internet-faci"
+  },
+  {
+    "id": "saa-254",
+    "exam": "Exam 4",
+    "index": 59,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is reviewing a recent migration of a three-tier application to a VPC. The security team discovers that the principle of least privilege is not being applied to Amazon EC2"
+  },
+  {
+    "id": "saa-256",
+    "exam": "Exam 4",
+    "index": 61,
+    "old_correct": "D",
+    "new_correct": "B,D",
+    "method": "dot",
+    "evidence": "B,D",
+    "prompt": "A solutions architect is implementing a document review application using an Amazon S3 bucket for storage. The solution must prevent accidental deletion of the documents and ensure"
+  },
+  {
+    "id": "saa-261",
+    "exam": "Exam 5",
+    "index": 1,
+    "old_correct": "C",
+    "new_correct": "A,C",
+    "method": "dot",
+    "evidence": "A,C",
+    "prompt": "A company recently announced the deployment of its retail website to a global audience. The website runs on multiple Amazon EC2 instances behind an Elastic Load Balancer. The insta"
+  },
+  {
+    "id": "saa-263",
+    "exam": "Exam 5",
+    "index": 3,
+    "old_correct": "D",
+    "new_correct": "A,D",
+    "method": "dot",
+    "evidence": "A,D",
+    "prompt": "A company is building an application that consists of several microservices. The company has decided to use container technologies to deploy its software on AWS. The company needs "
+  },
+  {
+    "id": "saa-267",
+    "exam": "Exam 5",
+    "index": 7,
+    "old_correct": "A",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company has one million users that use its mobile app. The company must analyze the data usage in near-real time. The company also must encrypt the data in near-real time and mus"
+  },
+  {
+    "id": "saa-268",
+    "exam": "Exam 5",
+    "index": 8,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A gaming company has a web application that displays scores. The application runs on Amazon EC2 instances behind an Application Load Balancer. The application stores data in an Ama"
+  },
+  {
+    "id": "saa-274",
+    "exam": "Exam 5",
+    "index": 14,
+    "old_correct": "A",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company runs an application on Amazon EC2 instances. The company needs to implement a disaster recovery (DR) solution for the application. The DR solution needs to have a recover"
+  },
+  {
+    "id": "saa-278",
+    "exam": "Exam 5",
+    "index": 18,
+    "old_correct": "D",
+    "new_correct": "B,E",
+    "method": "dot",
+    "evidence": "B,E",
+    "prompt": "A company wants to create an application to store employee data in a hierarchical structured relationship. The company needs a minimum-latency response to high-traffic queries for "
+  },
+  {
+    "id": "saa-280",
+    "exam": "Exam 5",
+    "index": 20,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is using Amazon CloudFront with its website. The company has enabled logging on the CloudFront distribution, and logs are saved in one of the company’s Amazon S3 buckets."
+  },
+  {
+    "id": "saa-289",
+    "exam": "Exam 5",
+    "index": 29,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company has an AWS Lambda function that needs read access to an Amazon S3 bucket that is located in the same AWS account. Which solution will meet these requirements in the MOST "
+  },
+  {
+    "id": "saa-290",
+    "exam": "Exam 5",
+    "index": 30,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company hosts a web application on multiple Amazon EC2 instances. The EC2 instances are in an Auto Scaling group that scales in response to user demand. The company wants to opti"
+  },
+  {
+    "id": "saa-291",
+    "exam": "Exam 5",
+    "index": 31,
+    "old_correct": "A",
+    "new_correct": "A,B",
+    "method": "dot",
+    "evidence": "A,B",
+    "prompt": "A media company uses Amazon CloudFront for its publicly available streaming video content. The company wants to secure the video content that is hosted in Amazon S3 by controlling "
+  },
+  {
+    "id": "saa-292",
+    "exam": "Exam 5",
+    "index": 32,
+    "old_correct": "D",
+    "new_correct": "A,B",
+    "method": "dot",
+    "evidence": "A,B",
+    "prompt": "A company is preparing a new data platform that will ingest real-time streaming data from multiple sources. The company needs to transform the data before writing the data to Amazo"
+  },
+  {
+    "id": "saa-296",
+    "exam": "Exam 5",
+    "index": 36,
+    "old_correct": "B",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A development team has launched a new application that is hosted on Amazon EC2 instances inside a development VPC. A solutions architect needs to create a new VPC in the same accou"
+  },
+  {
+    "id": "saa-307",
+    "exam": "Exam 5",
+    "index": 47,
+    "old_correct": "C",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company that primarily runs its application servers on premises has decided to migrate to AWS. The company wants to minimize its need to scale its Internet Small Computer Systems"
+  },
+  {
+    "id": "saa-317",
+    "exam": "Exam 5",
+    "index": 57,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company uses a legacy application to produce data in CSV format. The legacy application stores the output data in Amazon S3. The company is deploying a new commercial off-the-she"
+  },
+  {
+    "id": "saa-318",
+    "exam": "Exam 5",
+    "index": 58,
+    "old_correct": "D",
+    "new_correct": "A,D",
+    "method": "dot",
+    "evidence": "A,D",
+    "prompt": "A company recently migrated its entire IT environment to the AWS Cloud. The company discovers that users are provisioning oversized Amazon EC2 instances and modifying security grou"
+  },
+  {
+    "id": "saa-320",
+    "exam": "Exam 5",
+    "index": 60,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company is using a fleet of Amazon EC2 instances to ingest data from on-premises data sources. The data is in JSON format and ingestion rates can be as high as 1 MB/s. When an EC"
+  },
+  {
+    "id": "saa-325",
+    "exam": "Exam 5",
+    "index": 65,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company is hosting a web application from an Amazon S3 bucket. The application uses Amazon Cognito as an identity provider to authenticate users and return a JSON Web Token (JWT)"
+  },
+  {
+    "id": "saa-328",
+    "exam": "Exam 6",
+    "index": 3,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is hosting a three-tier ecommerce application in the AWS Cloud. The company hosts the website on Amazon S3 and integrates the website with an API that handles sales reque"
+  },
+  {
+    "id": "saa-337",
+    "exam": "Exam 6",
+    "index": 12,
+    "old_correct": "D",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company has deployed a web application on AWS. The company hosts the backend database on Amazon RDS for MySQL with a primary DB instance and five read replicas to support scaling"
+  },
+  {
+    "id": "saa-338",
+    "exam": "Exam 6",
+    "index": 13,
+    "old_correct": "B",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A solutions architect must create a disaster recovery (DR) plan for a high-volume software as a service (SaaS) platform. All data for the platform is stored in an Amazon Aurora MyS"
+  },
+  {
+    "id": "saa-345",
+    "exam": "Exam 6",
+    "index": 20,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company wants to restrict access to the content of one of its main web applications and to protect the content by using authorization techniques available on AWS. The company wan"
+  },
+  {
+    "id": "saa-348",
+    "exam": "Exam 6",
+    "index": 23,
+    "old_correct": "A",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company collects data from a large number of participants who use wearable devices. The company stores the data in an Amazon DynamoDB table and uses applications to analyze the d"
+  },
+  {
+    "id": "saa-350",
+    "exam": "Exam 6",
+    "index": 25,
+    "old_correct": "C",
+    "new_correct": "A,C",
+    "method": "dot",
+    "evidence": "A,C",
+    "prompt": "A company uses a 100 GB Amazon RDS for Microsoft SQL Server Single-AZ DB instance in the us-east-1 Region to store customer transactions. The company needs high availability and au"
+  },
+  {
+    "id": "saa-357",
+    "exam": "Exam 6",
+    "index": 32,
+    "old_correct": "D",
+    "new_correct": "A,D",
+    "method": "dot",
+    "evidence": "A,D",
+    "prompt": "A gaming company is moving its public scoreboard from a data center to the AWS Cloud. The company uses Amazon EC2 Windows Server instances behind an Application Load Balancer to ho"
+  },
+  {
+    "id": "saa-359",
+    "exam": "Exam 6",
+    "index": 34,
+    "old_correct": "B",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A hospital needs to store patient records in an Amazon S3 bucket. The hospital’s compliance team must ensure that all protected health information (PHI) is encrypted in transit and"
+  },
+  {
+    "id": "saa-362",
+    "exam": "Exam 6",
+    "index": 37,
+    "old_correct": "D",
+    "new_correct": "B,E",
+    "method": "dot",
+    "evidence": "B,E",
+    "prompt": "A company uses a payment processing system that requires messages for a particular payment ID to be received in the same order that they were sent. Otherwise, the payments might be"
+  },
+  {
+    "id": "saa-363",
+    "exam": "Exam 6",
+    "index": 38,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is building a game system that needs to send unique events to separate leaderboard, matchmaking, and authentication services concurrently. The company needs an AWS event-"
+  },
+  {
+    "id": "saa-364",
+    "exam": "Exam 6",
+    "index": 39,
+    "old_correct": "D",
+    "new_correct": "B,D",
+    "method": "dot",
+    "evidence": "B,D",
+    "prompt": "A hospital is designing a new application that gathers symptoms from patients. The hospital has decided to use Amazon Simple Queue Service (Amazon SQS) and Amazon Simple Notificati"
+  },
+  {
+    "id": "saa-367",
+    "exam": "Exam 6",
+    "index": 42,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company is using Amazon Route 53 latency-based routing to route requests to its UDP-based application for users around the world. The application is hosted on redundant servers i"
+  },
+  {
+    "id": "saa-370",
+    "exam": "Exam 6",
+    "index": 45,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company runs a public three-tier web application in a VPC. The application runs on Amazon EC2 instances across multiple Availability Zones. The EC2 instances that run in private "
+  },
+  {
+    "id": "saa-371",
+    "exam": "Exam 6",
+    "index": 46,
+    "old_correct": "D",
+    "new_correct": "C,D",
+    "method": "dot",
+    "evidence": "C,D",
+    "prompt": "A company needs to create an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to host a digital media streaming application. The EKS cluster will use a managed node group tha"
+  },
+  {
+    "id": "saa-378",
+    "exam": "Exam 6",
+    "index": 53,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is developing a real-time multiplayer game that uses UDP for communications between the client and servers in an Auto Scaling group. Spikes in demand are anticipated duri"
+  },
+  {
+    "id": "saa-387",
+    "exam": "Exam 6",
+    "index": 62,
+    "old_correct": "D",
+    "new_correct": "D,E",
+    "method": "dot",
+    "evidence": "D,E",
+    "prompt": "A new employee has joined a company as a deployment engineer. The deployment engineer will be using AWS CloudFormation templates to create multiple AWS resources. A solutions archi"
+  },
+  {
+    "id": "saa-392",
+    "exam": "Exam 7",
+    "index": 2,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company wants to deploy a new public web application on AWS. The application includes a web server tier that uses Amazon EC2 instances. The application also includes a database t"
+  },
+  {
+    "id": "saa-396",
+    "exam": "Exam 7",
+    "index": 6,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company has implemented a self-managed DNS service on AWS. The solution consists of the following: • Amazon EC2 instances in different AWS Regions • Endpoints of a standard accel"
+  },
+  {
+    "id": "saa-401",
+    "exam": "Exam 7",
+    "index": 11,
+    "old_correct": "D",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company wants to use the AWS Cloud to make an existing application highly available and resilient. The current version of the application resides in the company's data center. Th"
+  },
+  {
+    "id": "saa-405",
+    "exam": "Exam 7",
+    "index": 15,
+    "old_correct": "A",
+    "new_correct": "A,E",
+    "method": "dot",
+    "evidence": "A,E",
+    "prompt": "A solutions architect is designing the architecture for a software demonstration environment. The environment will run on Amazon EC2 instances in an Auto Scaling group behind an Ap"
+  },
+  {
+    "id": "saa-406",
+    "exam": "Exam 7",
+    "index": 16,
+    "old_correct": "D",
+    "new_correct": "C,D",
+    "method": "dot",
+    "evidence": "C,D",
+    "prompt": "A solutions architect is designing a two-tiered architecture that includes a public subnet and a database subnet. The web servers in the public subnet must be open to the internet "
+  },
+  {
+    "id": "saa-408",
+    "exam": "Exam 7",
+    "index": 18,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company runs an application that receives data from thousands of geographically dispersed remote devices that use UDP. The application processes the data immediately and sends a "
+  },
+  {
+    "id": "saa-409",
+    "exam": "Exam 7",
+    "index": 19,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A solutions architect must migrate a Windows Internet Information Services (IIS) web application to AWS. The application currently relies on a file share hosted in the user's on-pr"
+  },
+  {
+    "id": "saa-415",
+    "exam": "Exam 7",
+    "index": 25,
+    "old_correct": "D",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company is storing petabytes of data in Amazon S3 Standard. The data is stored in multiple S3 buckets and is accessed with varying frequency. The company does not know access pat"
+  },
+  {
+    "id": "saa-416",
+    "exam": "Exam 7",
+    "index": 26,
+    "old_correct": "D",
+    "new_correct": "B,D",
+    "method": "dot",
+    "evidence": "B,D",
+    "prompt": "A rapidly growing global ecommerce company is hosting its web application on AWS. The web application includes static content and dynamic content. The website stores online transac"
+  },
+  {
+    "id": "saa-420",
+    "exam": "Exam 7",
+    "index": 30,
+    "old_correct": "A",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company wants to use an Amazon RDS for PostgreSQL DB cluster to simplify time-consuming database administrative tasks for production database workloads. The company wants to ensu"
+  },
+  {
+    "id": "saa-422",
+    "exam": "Exam 7",
+    "index": 32,
+    "old_correct": "B",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company is developing a new machine learning (ML) model solution on AWS. The models are developed as independent microservices that fetch approximately 1 GB of model data from Am"
+  },
+  {
+    "id": "saa-430",
+    "exam": "Exam 7",
+    "index": 40,
+    "old_correct": "D",
+    "new_correct": "B,C",
+    "method": "dot",
+    "evidence": "B,C",
+    "prompt": "A manufacturing company has machine sensors that upload .csv files to an Amazon S3 bucket. These .csv files must be converted into images and must be made available as soon as poss"
+  },
+  {
+    "id": "saa-431",
+    "exam": "Exam 7",
+    "index": 41,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company has developed a new video game as a web application. The application is in a three-tier architecture in a VPC with Amazon RDS for MySQL in the database layer. Several pla"
+  },
+  {
+    "id": "saa-440",
+    "exam": "Exam 7",
+    "index": 50,
+    "old_correct": "C",
+    "new_correct": "A,C",
+    "method": "dot",
+    "evidence": "A,C",
+    "prompt": "A company used an Amazon RDS for MySQL DB instance during application testing. Before terminating the DB instance at the end of the test cycle, a solutions architect created two ba"
+  },
+  {
+    "id": "saa-446",
+    "exam": "Exam 7",
+    "index": 56,
+    "old_correct": "C",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company stores data in PDF format in an Amazon S3 bucket. The company must follow a legal requirement to retain all new and existing data in Amazon S3 for 7 years. Which solution"
+  },
+  {
+    "id": "saa-449",
+    "exam": "Exam 7",
+    "index": 59,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company runs its application on an Oracle database. The company plans to quickly migrate to AWS because of limited resources for the database, backup administration, and data cen"
+  },
+  {
+    "id": "saa-451",
+    "exam": "Exam 7",
+    "index": 61,
+    "old_correct": "C",
+    "new_correct": "C,B",
+    "method": "dot",
+    "evidence": "C,B",
+    "prompt": "A company is migrating its applications and databases to the AWS Cloud. The company will use Amazon Elastic Container Service (Amazon ECS), AWS Direct Connect, and Amazon RDS. Whic"
+  },
+  {
+    "id": "saa-453",
+    "exam": "Exam 7",
+    "index": 63,
+    "old_correct": "A",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company wants to implement a backup strategy for Amazon EC2 data and multiple Amazon S3 buckets. Because of regulatory requirements, the company must retain backup files for a sp"
+  },
+  {
+    "id": "saa-455",
+    "exam": "Exam 7",
+    "index": 65,
+    "old_correct": "D",
+    "new_correct": "B,D,F",
+    "method": "dot",
+    "evidence": "B,D,F",
+    "prompt": "A company uses AWS Organizations. The company wants to operate some of its AWS accounts with different budgets. The company wants to receive alerts and automatically prevent provis"
+  },
+  {
+    "id": "saa-458",
+    "exam": "Exam 8",
+    "index": 3,
+    "old_correct": "B",
+    "new_correct": "B,C",
+    "method": "dot",
+    "evidence": "B,C",
+    "prompt": "A solutions architect is designing a RESTAPI in Amazon API Gateway for a cash payback service. The application requires 1 GB of memory and 2 GB of storage for its computation resou"
+  },
+  {
+    "id": "saa-461",
+    "exam": "Exam 8",
+    "index": 6,
+    "old_correct": "A",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is developing a mobile gaming app in a single AWS Region. The app runs on multiple Amazon EC2 instances in an Auto Scaling group. The company stores the app data in Amazo"
+  },
+  {
+    "id": "saa-462",
+    "exam": "Exam 8",
+    "index": 7,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company has an application that processes customer orders. The company hosts the application on an Amazon EC2 instance that saves the orders to an Amazon Aurora database. Occasio"
+  },
+  {
+    "id": "saa-466",
+    "exam": "Exam 8",
+    "index": 11,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company designed a stateless two-tier application that uses Amazon EC2 in a single Availability Zone and an Amazon RDS Multi-AZ DB instance. New company management wants to ensur"
+  },
+  {
+    "id": "saa-467",
+    "exam": "Exam 8",
+    "index": 12,
+    "old_correct": "A",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company uses AWS Organizations. A member account has purchased a Compute Savings Plan. Because of changes in the workloads inside the member account, the account no longer receiv"
+  },
+  {
+    "id": "saa-469",
+    "exam": "Exam 8",
+    "index": 14,
+    "old_correct": "B",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company stores raw collected data in an Amazon S3 bucket. The data is used for several types of analytics on behalf of the company's customers. The type of analytics requested de"
+  },
+  {
+    "id": "saa-478",
+    "exam": "Exam 8",
+    "index": 23,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A law firm needs to share information with the public. The information includes hundreds of files that must be publicly readable. Modifications or deletions of the files by anyone "
+  },
+  {
+    "id": "saa-483",
+    "exam": "Exam 8",
+    "index": 28,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company containerized a Windows job that runs on .NET 6 Framework under a Windows container. The company wants to run this job in the AWS Cloud. The job runs every 10 minutes. Th"
+  },
+  {
+    "id": "saa-484",
+    "exam": "Exam 8",
+    "index": 29,
+    "old_correct": "D",
+    "new_correct": "A,E",
+    "method": "dot",
+    "evidence": "A,E",
+    "prompt": "A company wants to move from many standalone AWS accounts to a consolidated, multi-account architecture. The company plans to create many new AWS accounts for different business un"
+  },
+  {
+    "id": "saa-485",
+    "exam": "Exam 8",
+    "index": 30,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company is looking for a solution that can store video archives in AWS from old news footage. The company needs to minimize costs and will rarely need to restore these files. Whe"
+  },
+  {
+    "id": "saa-486",
+    "exam": "Exam 8",
+    "index": 31,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company is building a three-tier application on AWS. The presentation tier will serve a static website The logic tier is a containerized application. This application will store "
+  },
+  {
+    "id": "saa-487",
+    "exam": "Exam 8",
+    "index": 32,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company seeks a storage solution for its application. The solution must be highly available and scalable. The solution also must function as a file system be mountable by multipl"
+  },
+  {
+    "id": "saa-493",
+    "exam": "Exam 8",
+    "index": 38,
+    "old_correct": "D",
+    "new_correct": "D,E,F",
+    "method": "dot",
+    "evidence": "D,E,F",
+    "prompt": "A company wants to use artificial intelligence (AI) to determine the quality of its customer service calls. The company currently manages calls in four different languages, includi"
+  },
+  {
+    "id": "saa-496",
+    "exam": "Exam 8",
+    "index": 41,
+    "old_correct": "D",
+    "new_correct": "B,D",
+    "method": "dot",
+    "evidence": "B,D",
+    "prompt": "A company uses on-premises servers to host its applications. The company is running out of storage capacity. The applications use both block storage and NFS storage. The company ne"
+  },
+  {
+    "id": "saa-499",
+    "exam": "Exam 8",
+    "index": 44,
+    "old_correct": "C",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company needs to minimize the cost of its 1 Gbps AWS Direct Connect connection. The company's average connection utilization is less than 10%. A solutions architect must recommen"
+  },
+  {
+    "id": "saa-500",
+    "exam": "Exam 8",
+    "index": 45,
+    "old_correct": "D",
+    "new_correct": "A,D",
+    "method": "dot",
+    "evidence": "A,D",
+    "prompt": "A company has multiple Windows file servers on premises. The company wants to migrate and consolidate its files into an Amazon FSx for Windows File Server file system. File permiss"
+  },
+  {
+    "id": "saa-502",
+    "exam": "Exam 8",
+    "index": 47,
+    "old_correct": "D",
+    "new_correct": "C,E",
+    "method": "dot",
+    "evidence": "C,E",
+    "prompt": "A company runs a website that uses a content management system (CMS) on Amazon EC2. The CMS runs on a single EC2 instance and uses an Amazon Aurora MySQL Multi-AZ DB instance for t"
+  },
+  {
+    "id": "saa-503",
+    "exam": "Exam 8",
+    "index": 48,
+    "old_correct": "D",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company runs an infrastructure monitoring service. The company is building a new feature that will enable the service to monitor data in customer AWS accounts. The new feature wi"
+  },
+  {
+    "id": "saa-509",
+    "exam": "Exam 8",
+    "index": 54,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company operates a two-tier application for image processing. The application uses two Availability Zones, each with one public subnet and one private subnet. An Application Load"
+  },
+  {
+    "id": "saa-510",
+    "exam": "Exam 8",
+    "index": 55,
+    "old_correct": "B",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A global marketing company has applications that run in the ap-southeast-2 Region and the eu-west-1 Region. Applications that run in a VPC in eu- west-1 need to communicate securel"
+  },
+  {
+    "id": "saa-513",
+    "exam": "Exam 8",
+    "index": 58,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A social media company wants to allow its users to upload images in an application that is hosted in the AWS Cloud. The company needs a solution that automatically resizes the imag"
+  },
+  {
+    "id": "saa-515",
+    "exam": "Exam 8",
+    "index": 60,
+    "old_correct": "C",
+    "new_correct": "B,C,E",
+    "method": "dot",
+    "evidence": "B,C,E",
+    "prompt": "A company is migrating an on-premises application to AWS. The company wants to use Amazon Redshift as a solution. Which use cases are suitable for Amazon Redshift in this scenario?"
+  },
+  {
+    "id": "saa-517",
+    "exam": "Exam 8",
+    "index": 62,
+    "old_correct": "D",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company wants to send all AWS Systems Manager Session Manager logs to an Amazon S3 bucket for archival purposes. Which solution will meet this requirement with the MOST operation"
+  },
+  {
+    "id": "saa-520",
+    "exam": "Exam 8",
+    "index": 65,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is designing a new web application that will run on Amazon EC2 Instances. The application will use Amazon DynamoDB for backend data storage. The application traffic will "
+  },
+  {
+    "id": "saa-522",
+    "exam": "Exam 9",
+    "index": 2,
+    "old_correct": "C",
+    "new_correct": "B,C",
+    "method": "dot",
+    "evidence": "B,C",
+    "prompt": "A company runs container applications by using Amazon Elastic Kubernetes Service (Amazon EKS). The company's workload is not consistent throughout the day. The company wants Amazon"
+  },
+  {
+    "id": "saa-523",
+    "exam": "Exam 9",
+    "index": 3,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company runs a microservice-based serverless web application. The application must be able to retrieve data from multiple Amazon DynamoDB tables A solutions architect needs to gi"
+  },
+  {
+    "id": "saa-524",
+    "exam": "Exam 9",
+    "index": 4,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company wants to analyze and troubleshoot Access Denied errors and Unauthorized errors that are related to IAM permissions. The company has AWS CloudTrail turned on. Which soluti"
+  },
+  {
+    "id": "saa-525",
+    "exam": "Exam 9",
+    "index": 5,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company wants to add its existing AWS usage cost to its operation cost dashboard. A solutions architect needs to recommend a solution that will give the company access to its usa"
+  },
+  {
+    "id": "saa-529",
+    "exam": "Exam 9",
+    "index": 9,
+    "old_correct": "A",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is migrating its workloads to AWS. The company has transactional and sensitive data in its databases. The company wants to use AWS Cloud solutions to increase security an"
+  },
+  {
+    "id": "saa-532",
+    "exam": "Exam 9",
+    "index": 12,
+    "old_correct": "D",
+    "new_correct": "A,D,F",
+    "method": "dot",
+    "evidence": "A,D,F",
+    "prompt": "A company has a workload in an AWS Region. Customers connect to and access the workload by using an Amazon API Gateway REST API. The company uses Amazon Route 53 as its DNS provide"
+  },
+  {
+    "id": "saa-533",
+    "exam": "Exam 9",
+    "index": 13,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company stores data in Amazon S3. According to regulations, the data must not contain personally identifiable information (PII). The company recently discovered that S3 buckets h"
+  },
+  {
+    "id": "saa-535",
+    "exam": "Exam 9",
+    "index": 15,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is building an Amazon Elastic Kubernetes Service (Amazon EKS) cluster for its workloads. All secrets that are stored in Amazon EKS must be encrypted in the Kubernetes etc"
+  },
+  {
+    "id": "saa-536",
+    "exam": "Exam 9",
+    "index": 16,
+    "old_correct": "B",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company wants to provide data scientists with near real-time read-only access to the company's production Amazon RDS for PostgreSQL database. The database is currently configured"
+  },
+  {
+    "id": "saa-537",
+    "exam": "Exam 9",
+    "index": 17,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company runs a three-tier web application in the AWS Cloud that operates across three Availability Zones. The application architecture has an Application Load Balancer, an Amazon"
+  },
+  {
+    "id": "saa-540",
+    "exam": "Exam 9",
+    "index": 20,
+    "old_correct": "C",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company has an on-premises server that uses an Oracle database to process and store customer information. The company wants to use an AWS database service to achieve higher avail"
+  },
+  {
+    "id": "saa-541",
+    "exam": "Exam 9",
+    "index": 21,
+    "old_correct": "D",
+    "new_correct": "A,C,E",
+    "method": "dot",
+    "evidence": "A,C,E",
+    "prompt": "A company wants to build a web application on AWS. Client access requests to the website are not predictable and can be idle for a long time. Only customers who have paid a subscri"
+  },
+  {
+    "id": "saa-550",
+    "exam": "Exam 9",
+    "index": 30,
+    "old_correct": "D",
+    "new_correct": "B,D",
+    "method": "dot",
+    "evidence": "B,D",
+    "prompt": "A company is using AWS Key Management Service (AWS KMS) keys to encrypt AWS Lambda environment variables. A solutions architect needs to ensure that the required permissions are in"
+  },
+  {
+    "id": "saa-551",
+    "exam": "Exam 9",
+    "index": 31,
+    "old_correct": "B",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A company has a financial application that produces reports. The reports average 50 KB in size and are stored in Amazon S3. The reports are frequently accessed during the first wee"
+  },
+  {
+    "id": "saa-557",
+    "exam": "Exam 9",
+    "index": 37,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A solutions architect manages an analytics application. The application stores large amounts of semistructured data in an Amazon S3 bucket. The solutions architect wants to use par"
+  },
+  {
+    "id": "saa-562",
+    "exam": "Exam 9",
+    "index": 42,
+    "old_correct": "A",
+    "new_correct": "A,B",
+    "method": "dot",
+    "evidence": "A,B",
+    "prompt": "A solutions architect needs to ensure that API calls to Amazon DynamoDB from Amazon EC2 instances in a VPC do not travel across the internet. Which combination of steps should the "
+  },
+  {
+    "id": "saa-564",
+    "exam": "Exam 9",
+    "index": 44,
+    "old_correct": "C",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company is building an ecommerce application and needs to store sensitive customer information. The company needs to give customers the ability to complete purchase transactions "
+  },
+  {
+    "id": "saa-565",
+    "exam": "Exam 9",
+    "index": 45,
+    "old_correct": "B",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company has an on-premises MySQL database that handles transactional data. The company is migrating the database to the AWS Cloud. The migrated database must maintain compatibili"
+  },
+  {
+    "id": "saa-567",
+    "exam": "Exam 9",
+    "index": 47,
+    "old_correct": "C",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A solutions architect is designing a workload that will store hourly energy consumption by business tenants in a building. The sensors will feed a database through HTTP requests th"
+  },
+  {
+    "id": "saa-574",
+    "exam": "Exam 9",
+    "index": 54,
+    "old_correct": "D",
+    "new_correct": "A",
+    "method": "dot",
+    "evidence": "A",
+    "prompt": "A financial services company launched a new application that uses an Amazon RDS for MySQL database. The company uses the application to track stock market trends. The company needs"
+  },
+  {
+    "id": "saa-575",
+    "exam": "Exam 9",
+    "index": 55,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company deploys its applications on Amazon Elastic Kubernetes Service (Amazon EKS) behind an Application Load Balancer in an AWS Region. The application needs to store data in a "
+  },
+  {
+    "id": "saa-577",
+    "exam": "Exam 9",
+    "index": 57,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company uses an Amazon CloudFront distribution to serve content pages for its website. The company needs to ensure that clients use a TLS certificate when accessing the company's"
+  },
+  {
+    "id": "saa-580",
+    "exam": "Exam 9",
+    "index": 60,
+    "old_correct": "B",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company uses locally attached storage to run a latency-sensitive application on premises. The company is using a lift and shift method to move the application to the AWS Cloud. T"
+  },
+  {
+    "id": "saa-598",
+    "exam": "Exam 10",
+    "index": 13,
+    "old_correct": "D",
+    "new_correct": "A,C,F",
+    "method": "dot",
+    "evidence": "A,C,F",
+    "prompt": "A research company uses on-premises devices to generate data for analysis. The company wants to use the AWS Cloud to analyze the data. The devices generate .csv files and support w"
+  },
+  {
+    "id": "saa-605",
+    "exam": "Exam 10",
+    "index": 20,
+    "old_correct": "C",
+    "new_correct": "D",
+    "method": "dot",
+    "evidence": "D",
+    "prompt": "A company has several on-premises Internet Small Computer Systems Interface (ISCSI) network storage servers. The company wants to reduce the number of these servers by moving to th"
+  },
+  {
+    "id": "saa-617",
+    "exam": "Exam 10",
+    "index": 32,
+    "old_correct": "B",
+    "new_correct": "B,E",
+    "method": "dot",
+    "evidence": "B,E",
+    "prompt": "A company wants to migrate an on-premises data center to AWS. The data center hosts a storage server that stores data in an NFS-based file system. The storage server holds 200 GB o"
+  },
+  {
+    "id": "saa-618",
+    "exam": "Exam 10",
+    "index": 33,
+    "old_correct": "A",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company wants to use Amazon FSx for Windows File Server for its Amazon EC2 instances that have an SMB file share mounted as a volume in the us-east-1 Region. The company has a re"
+  },
+  {
+    "id": "saa-622",
+    "exam": "Exam 10",
+    "index": 37,
+    "old_correct": "D",
+    "new_correct": "C,D",
+    "method": "dot",
+    "evidence": "C,D",
+    "prompt": "A company is creating a new web application for its subscribers. The application will consist of a static single page and a persistent database layer. The application will have mil"
+  },
+  {
+    "id": "saa-625",
+    "exam": "Exam 10",
+    "index": 40,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company is hosting a website behind multiple Application Load Balancers. The company has different distribution rights for its content around the world. A solutions architect nee"
+  },
+  {
+    "id": "saa-630",
+    "exam": "Exam 10",
+    "index": 45,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A solutions architect is creating a data processing job that runs once daily and can take up to 2 hours to complete. If the job is interrupted, it has to restart from the beginning"
+  },
+  {
+    "id": "saa-631",
+    "exam": "Exam 10",
+    "index": 46,
+    "old_correct": "A",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A social media company wants to store its database of user profiles, relationships, and interactions in the AWS Cloud. The company needs an application to monitor any changes in th"
+  },
+  {
+    "id": "saa-632",
+    "exam": "Exam 10",
+    "index": 47,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company is creating a new application that will store a large amount of data. The data will be analyzed hourly and will be modified by several Amazon EC2 Linux instances that are"
+  },
+  {
+    "id": "saa-633",
+    "exam": "Exam 10",
+    "index": 48,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A company manages an application that stores data on an Amazon RDS for PostgreSQL Multi-AZ DB instance. Increases in traffic are causing performance problems. The company determine"
+  },
+  {
+    "id": "saa-636",
+    "exam": "Exam 10",
+    "index": 51,
+    "old_correct": "D",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "A development team is creating an event-based application that uses AWS Lambda functions. Events will be generated when files are added to an Amazon S3 bucket. The development team"
+  },
+  {
+    "id": "saa-637",
+    "exam": "Exam 10",
+    "index": 52,
+    "old_correct": "C",
+    "new_correct": "B,C",
+    "method": "dot",
+    "evidence": "B,C",
+    "prompt": "A solutions architect is designing a new service behind Amazon API Gateway. The request patterns for the service will be unpredictable and can change suddenly from 0 requests to ov"
+  },
+  {
+    "id": "saa-640",
+    "exam": "Exam 10",
+    "index": 55,
+    "old_correct": "C",
+    "new_correct": "B,E",
+    "method": "dot",
+    "evidence": "B,E",
+    "prompt": "A company has an application workflow that uses an AWS Lambda function to download and decrypt files from Amazon S3. These files are encrypted using AWS Key Management Service (AWS"
+  },
+  {
+    "id": "saa-641",
+    "exam": "Exam 10",
+    "index": 56,
+    "old_correct": "D",
+    "new_correct": "B",
+    "method": "dot",
+    "evidence": "B",
+    "prompt": "A company wants to monitor its AWS costs for financial review. The cloud operations team is designing an architecture in the AWS Organizations management account to query AWS Cost "
+  },
+  {
+    "id": "saa-649",
+    "exam": "Exam 10",
+    "index": 64,
+    "old_correct": "A",
+    "new_correct": "C",
+    "method": "dot",
+    "evidence": "C",
+    "prompt": "An ecommerce company runs a PostgreSQL database on premises. The database stores data by using high IOPS Amazon Elastic Block Store (Amazon EBS) block storage. The daily peak I/O t"
+  }
+]

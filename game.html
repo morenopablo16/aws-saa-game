@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AWS Architect: Training Grounds — SAA-C03</title>
+  <link rel="stylesheet" href="game.css"/>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- HUD persistente -->
+    <header class="hud">
+      <div class="rank-badge">
+        <div class="icon" id="hudRankIcon">🎓</div>
+        <div class="who">
+          <div class="rank-name" id="hudRankName">Cloud Intern</div>
+          <div class="level-tag" id="hudLevel">NIVEL 1</div>
+        </div>
+      </div>
+      <div class="xpbar-wrap">
+        <div class="xpbar-label">
+          <span>XP</span>
+          <span id="hudXpText">0 / 100</span>
+        </div>
+        <div class="xpbar" role="progressbar" aria-label="Progreso de nivel" aria-valuemin="0" aria-valuemax="100" id="hudXpBar">
+          <div class="fill" id="hudXpFill"></div>
+          <div class="segments"></div>
+        </div>
+      </div>
+      <div class="hud-pill coins" title="Monedas">🪙 <span id="hudCoins">0</span></div>
+      <div class="hud-pill flame" title="Racha diaria">🔥 <span id="hudDailyStreak">0</span> <span class="sub">días</span></div>
+      <div class="hud-actions">
+        <a href="quiz.html" title="Quiz clásico">Modo clásico</a>
+        <button id="exportBtn" title="Descargar progreso como JSON">⬇ Exportar</button>
+        <button id="importBtn" title="Cargar progreso desde JSON">⬆ Importar</button>
+        <input type="file" id="importFile" accept=".json,application/json" class="hidden"/>
+        <button id="resetBtn" title="Reiniciar progreso del juego">Reiniciar</button>
+      </div>
+    </header>
+
+    <!-- ============ DASHBOARD ============ -->
+    <main id="viewDashboard">
+      <div class="dash-grid">
+        <div>
+          <section class="panel" aria-labelledby="missionsTitle">
+            <p class="eyebrow" id="missionsTitle">Misiones de hoy</p>
+            <div id="missionsList"></div>
+          </section>
+          <section class="panel" style="margin-top: 14px;" aria-labelledby="statsTitle">
+            <p class="eyebrow" id="statsTitle">Tu progreso</p>
+            <div class="stats-row" id="statsRow"></div>
+          </section>
+        </div>
+        <div>
+          <section class="panel" aria-labelledby="modesTitle">
+            <p class="eyebrow orange" id="modesTitle">Elige tu partida</p>
+            <div class="modes-grid" id="modesGrid"></div>
+          </section>
+          <section class="panel" style="margin-top: 14px;" aria-labelledby="campaignTitle">
+            <p class="eyebrow orange" id="campaignTitle">Campaña por servicios</p>
+            <div class="cat-grid" id="catGrid"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- ============ PARTIDA ============ -->
+    <main id="viewPlay" class="hidden">
+      <div class="playbar">
+        <span class="mode-tag" id="playModeTag">MODO</span>
+        <span class="progress-tag" id="playProgress"></span>
+        <span class="timer-tag" id="playTimer"></span>
+        <span class="lives-tag" id="playLives"></span>
+        <span class="spacer"></span>
+        <div class="combo-meter" id="comboMeter" title="Racha de aciertos">
+          <span class="combo-n" id="comboN">0</span>
+          <span class="combo-x" id="comboX">racha</span>
+        </div>
+        <button class="btn" id="quitBtn">Terminar</button>
+      </div>
+
+      <section class="panel qcard" id="qCard">
+        <div class="xp-float" id="xpFloat"></div>
+        <div class="chips" id="qChips"></div>
+        <div class="qprompt" id="qPrompt"></div>
+        <div class="opts" id="qOptions"></div>
+        <div class="play-actions">
+          <button class="btn primary" id="submitBtn" disabled>Responder</button>
+          <button class="btn" id="nextBtn" disabled>Siguiente</button>
+          <button class="flag-btn" id="flagBtn">☆ Marcar para repaso</button>
+        </div>
+        <div id="resultBox"></div>
+      </section>
+    </main>
+
+    <!-- ============ RESUMEN ============ -->
+    <main id="viewSummary" class="hidden">
+      <section class="panel">
+        <div class="summary-hero">
+          <p class="eyebrow orange" id="summaryMode">SESIÓN</p>
+          <div class="big" id="summaryTitle">Sesión completada</div>
+          <div class="sub" id="summarySub"></div>
+        </div>
+        <div class="summary-grid" id="summaryGrid"></div>
+        <div class="summary-actions">
+          <button class="btn primary" id="againBtn">⚡ Otra ronda</button>
+          <button class="btn" id="dashBtn">Volver al dashboard</button>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <!-- Overlay genérico: level-up, cofres, boss -->
+  <div class="overlay hidden" id="overlay" role="dialog" aria-modal="true">
+    <div class="overlay-card">
+      <div class="ov-icon" id="ovIcon">🎉</div>
+      <div class="ov-title" id="ovTitle"></div>
+      <div class="ov-sub" id="ovSub"></div>
+      <button class="btn primary" id="ovBtn">Continuar</button>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="quiz-data-all.js"></script>
+  <script src="game-core.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
