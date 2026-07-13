@@ -38,7 +38,7 @@ node game-selftest.js   # 33 comprobaciones de la lógica del juego
 | ⚡ Ronda rápida | 10 preguntas adaptativas: prioriza repasos pendientes, no vistas y categorías con <70% de acierto |
 | 🗺️ Campaña | 10 preguntas de un servicio concreto (EC2, S3, VPC, IAM…), detectado automáticamente por palabras clave |
 | ⚔️ Boss battle | 5 preguntas difíciles de un servicio; 4/5 para vencer (+150 XP, +40 🪙, corona permanente) |
-| ⏱️ Sprint | 5 minutos, todas las que puedas |
+| 📖 En orden | Recorre el pool activo secuencialmente desde el nº que elijas (por defecto, la primera no vista); ideal para completar packs sin repetir |
 | ❤️ Supervivencia | 3 vidas, cada fallo cuesta una |
 | 🔁 Repaso | Falladas + marcadas (★) + repasos programados que tocan hoy |
 
@@ -79,7 +79,7 @@ Publicación (una vez):
 git remote add origin https://github.com/<TU_USUARIO>/aws-saa-game.git
 git push -u origin main
 # 2) En GitHub: Settings → Pages → Source: Deploy from a branch → main / (root)
-# 3) URL final: https://<TU_USUARIO>.github.io/aws-saa-game/
+# 3) URL final: https://morenopablo16.github.io/aws-saa-game/
 ```
 
 Actualizar tras cambios locales: `git add -A; git commit -m "update"; git push`.

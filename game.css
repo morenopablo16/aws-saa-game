@@ -291,6 +291,46 @@ button:focus-visible, a:focus-visible, label:focus-within {
 .mode-card .mode-name { font-weight: 700; font-size: 14px; margin: 6px 0 2px; }
 .mode-card .mode-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
 
+/* Controles del modo "En orden": offset + jugar */
+.ordered-controls {
+  display: flex; align-items: center; gap: 6px;
+  margin-top: 10px;
+}
+.ordered-controls label {
+  font-family: var(--hud-font);
+  font-size: 10.5px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.ordered-controls input {
+  width: 64px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--ink);
+  font-family: var(--hud-font);
+  font-size: 12px;
+}
+.ordered-controls input:focus {
+  outline: none;
+  border-color: rgba(255, 153, 0, 0.55);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+.ordered-controls .ordered-go {
+  flex: 1;
+  border: 0;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--orange), #e08600);
+  color: #14100a;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: var(--body-font);
+}
+.ordered-controls .ordered-go:hover { filter: brightness(1.08); }
+
 .cat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));

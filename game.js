@@ -122,17 +122,40 @@
     quick:    { name: "Ronda rápida", tag: "RONDA RÁPIDA", icon: "⚡", desc: "10 preguntas adaptadas a tus puntos débiles y repasos pendientes." },
     campaign: { name: "Campaña", tag: "CAMPAÑA", icon: "🗺️", desc: "Domina un servicio de AWS pregunta a pregunta." },
     boss:     { name: "Boss battle", tag: "BOSS BATTLE", icon: "⚔️", desc: "5 preguntas difíciles. Acierta 4 para derrotar al jefe." },
-    sprint:   { name: "Sprint", tag: "SPRINT 5:00", icon: "⏱️", desc: "5 minutos. Responde todo lo que puedas." },
+    ordered:  { name: "En orden", tag: "EN ORDEN", icon: "📖", desc: "Recorre el pack pregunta a pregunta desde donde tú elijas. Sin repetir." },
     survival: { name: "Supervivencia", tag: "SUPERVIVENCIA", icon: "❤️", desc: "3 vidas. Cada fallo cuesta una. ¿Hasta dónde llegas?" },
-    review:   { name: "Repaso", tag: "REPASO", icon: "🔁", desc: "Preguntas falladas, marcadas y repasos que tocan hoy." },
+    review:   { name: "Repaso", tag: "REPASO", icon: "🔁", desc: "Preguntas falladas, marcadas ★ y repasos que tocan hoy." },
   };
 
   let S = null; // sesión activa
 
-  function newSession(mode, categoryId) {
+  // Posición 1-based de la primera pregunta nunca vista del pool activo,
+  // en el mismo orden que usa el modo "En orden". Es el offset por defecto.
+  function orderedPool() {
+    return activePool().slice().sort((a, b) => {
+      const ea = parseInt(String(a.exam).replace(/\D+/g, ""), 10) || 0;
+      const eb = parseInt(String(b.exam).replace(/\D+/g, ""), 10) || 0;
+      return ea - eb || (a.index || 0) - (b.index || 0);
+    });
+  }
+
+  function firstUnseenOffset() {
+    const pool = orderedPool();
+    for (let i = 0; i < pool.length; i++) {
+      if (!state.q[pool[i].id]) return i + 1;
+    }
+    return 1;
+  }
+
+  function newSession(mode, categoryId, opts) {
+    opts = opts || {};
     const queue = GC.buildQueue(
       mode,
-      { categoryId: categoryId || null, count: mode === "boss" ? 5 : mode === "review" ? 15 : 10 },
+      {
+        categoryId: categoryId || null,
+        count: mode === "boss" ? 5 : mode === "review" ? 15 : 10,
+        offset: opts.offset || 1,
+      },
       activePool(), catIndex, state.q, Date.now(), Math.random
     );
     if (queue.length === 0) {
@@ -142,12 +165,12 @@
     S = {
       mode, categoryId: categoryId || null,
       queue, idx: 0,
+      offsetBase: mode === "ordered" ? (opts.offset || 1) : null,
+      poolTotal: mode === "ordered" ? activePool().length : null,
       answered: 0, correct: 0, hardWins: 0,
       combo: 0, bestCombo: 0,
       xp: 0, coins: 0,
       lives: mode === "survival" ? 3 : null,
-      deadline: mode === "sprint" ? Date.now() + 5 * 60e3 : null,
-      timerId: null,
       qStart: 0,
       doubleXp: 0,
       pendingChest: null,
@@ -155,30 +178,9 @@
       missionsDone: 0,
       bossWon: false,
     };
-    if (S.deadline) startSprintTimer();
     showView("play");
     renderPlaybar();
     renderQuestion();
-  }
-
-  function startSprintTimer() {
-    S.timerId = setInterval(() => {
-      if (!S || !S.deadline) return;
-      const left = Math.ceil((S.deadline - Date.now()) / 1000);
-      const el = $("playTimer");
-      el.textContent = fmtTime(left);
-      el.classList.toggle("warn", left <= 30);
-      if (left <= 0) endSession("¡Tiempo!");
-    }, 250);
-  }
-
-  function stopTimers() {
-    if (S && S.timerId) { clearInterval(S.timerId); S.timerId = null; }
-  }
-
-  function fmtTime(seconds) {
-    const s = Math.max(0, Math.floor(seconds));
-    return String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0");
   }
 
   // ---------------------------------------------------------------
@@ -272,18 +274,50 @@
   function renderModes() {
     const grid = $("modesGrid");
     grid.innerHTML = "";
-    for (const key of ["quick", "sprint", "survival", "review"]) {
+    for (const key of ["quick", "ordered", "survival", "review"]) {
       const m = MODES[key];
-      const btn = document.createElement("button");
-      btn.className = "mode-card";
       let extra = "";
       if (key === "review") {
         const now = Date.now();
         const pool = activePool();
         const due = pool.filter((q) => GC.isDue(state.q[q.id], now)).length;
+        const failed = pool.filter((q) => {
+          const s = state.q[q.id];
+          return s && s.w > 0 && (s.box || 0) === 0 && !GC.isDue(s, now);
+        }).length;
         const flagged = pool.filter((q) => state.q[q.id] && state.q[q.id].flag).length;
-        if (due + flagged > 0) extra = `<div class="mode-desc" style="color:var(--orange-hi); margin-top:4px;">${due} pendientes · ${flagged} marcadas</div>`;
+        if (due + failed + flagged > 0) {
+          extra = `<div class="mode-desc" style="color:var(--orange-hi); margin-top:4px;">${due} pendientes · ${failed} falladas · ${flagged} marcadas</div>`;
+        }
       }
+
+      if (key === "ordered") {
+        // Tarjeta con offset editable: no puede ser <button> porque contiene un input.
+        const card = document.createElement("div");
+        card.className = "mode-card";
+        const auto = firstUnseenOffset();
+        const total = activePool().length;
+        card.innerHTML =
+          `<div class="mode-icon">${m.icon}</div>` +
+          `<div class="mode-name">${m.name}</div>` +
+          `<div class="mode-desc">${m.desc}</div>` +
+          `<div class="ordered-controls">` +
+          `<label for="orderedOffset">Empezar en #</label>` +
+          `<input id="orderedOffset" type="number" min="1" max="${total}" value="${auto}" aria-label="Posición inicial (1-${total})"/>` +
+          `<button class="ordered-go" id="orderedGo">▶ Jugar</button>` +
+          `</div>` +
+          `<div class="mode-desc" style="margin-top:4px;">Sigues por la #${auto} de ${total}.</div>`;
+        card.querySelector("#orderedGo").addEventListener("click", () => {
+          const raw = parseInt(card.querySelector("#orderedOffset").value, 10);
+          const offset = Number.isNaN(raw) ? auto : Math.min(Math.max(raw, 1), total);
+          newSession("ordered", null, { offset });
+        });
+        grid.appendChild(card);
+        continue;
+      }
+
+      const btn = document.createElement("button");
+      btn.className = "mode-card";
       btn.innerHTML =
         `<div class="mode-icon">${m.icon}</div>` +
         `<div class="mode-name">${m.name}</div>` +
@@ -370,17 +404,20 @@
     let tag = m.tag;
     if (S.categoryId) tag += " // " + GC.categoryById(S.categoryId).name.toUpperCase();
     $("playModeTag").textContent = tag;
-    $("playTimer").textContent = S.deadline ? fmtTime((S.deadline - Date.now()) / 1000) : "";
+    $("playTimer").textContent = "";
     $("playLives").textContent = S.lives !== null ? "❤️".repeat(S.lives) + "🖤".repeat(3 - S.lives) : "";
     renderProgressTag();
     renderCombo();
   }
 
   function renderProgressTag() {
-    const endless = S.mode === "sprint" || S.mode === "survival";
-    $("playProgress").textContent = endless
-      ? `${S.answered} respondidas`
-      : `Q ${Math.min(S.idx + 1, S.queue.length)}/${S.queue.length}`;
+    if (S.mode === "survival") {
+      $("playProgress").textContent = `${S.answered} respondidas`;
+    } else if (S.mode === "ordered") {
+      $("playProgress").textContent = `#${S.offsetBase + S.idx} de ${S.poolTotal}`;
+    } else {
+      $("playProgress").textContent = `Q ${Math.min(S.idx + 1, S.queue.length)}/${S.queue.length}`;
+    }
   }
 
   function renderCombo() {
@@ -636,7 +673,6 @@
   function advance() {
     if (!S) return;
     if (S.lives !== null && S.lives <= 0) { endSession("Sin vidas"); return; }
-    if (S.deadline && Date.now() >= S.deadline) { endSession("¡Tiempo!"); return; }
     if (S.idx + 1 >= S.queue.length) { endSession("Cola completada"); return; }
     S.idx += 1;
     renderQuestion();
@@ -647,7 +683,6 @@
   // ---------------------------------------------------------------
   function endSession(reason) {
     if (!S) return;
-    stopTimers();
 
     // Resultado del boss
     if (S.mode === "boss" && S.categoryId) {
@@ -706,7 +741,9 @@
       .map((x) => `<div class="stat-tile"><div class="num">${x.num}</div><div class="lbl">${x.lbl}</div></div>`)
       .join("");
 
-    $("againBtn").textContent = S.mode === "boss" && !S.bossWon ? "⚔️ Revancha" : "⚡ Otra ronda";
+    $("againBtn").textContent =
+      S.mode === "boss" && !S.bossWon ? "⚔️ Revancha" :
+      S.mode === "ordered" ? "⏭ Continuar donde ibas" : "⚡ Otra ronda";
   }
 
   // ---------------------------------------------------------------
@@ -761,7 +798,13 @@
   $("nextBtn").addEventListener("click", next);
   $("quitBtn").addEventListener("click", () => endSession("Sesión terminada"));
   $("dashBtn").addEventListener("click", () => { S = null; showView("dashboard"); });
-  $("againBtn").addEventListener("click", () => newSession(S.mode, S.categoryId));
+  $("againBtn").addEventListener("click", () => {
+    if (S.mode === "ordered") {
+      newSession("ordered", null, { offset: S.offsetBase + S.answered });
+    } else {
+      newSession(S.mode, S.categoryId);
+    }
+  });
 
   $("flagBtn").addEventListener("click", () => {
     const q = currentQ();

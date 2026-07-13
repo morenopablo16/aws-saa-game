@@ -112,8 +112,30 @@ const onlyExam2 = QUESTIONS.filter((q) => q.exam === "Exam 2");
 check("el banco tiene Exam 2", onlyExam2.length > 0);
 const q2quick = GC.buildQueue("quick", { count: 10 }, onlyExam2, idx, stateQ, now);
 check("con pool filtrado la ronda solo saca de ese pack", q2quick.every((q) => q.exam === "Exam 2"));
-const q2sprint = GC.buildQueue("sprint", {}, onlyExam2, idx, stateQ, now);
-check("sprint respeta el pool filtrado", q2sprint.length === onlyExam2.length && q2sprint.every((q) => q.exam === "Exam 2"));
+const q2surv = GC.buildQueue("survival", {}, onlyExam2, idx, stateQ, now);
+check("supervivencia respeta el pool filtrado", q2surv.length === onlyExam2.length && q2surv.every((q) => q.exam === "Exam 2"));
+
+console.log("== Modo en orden ==");
+const ord = GC.buildQueue("ordered", { offset: 16 }, QUESTIONS, idx, stateQ, now);
+check("empieza en la posición del offset (16 -> saa-16)", ord[0].id === "saa-16");
+check("recorre en orden sin saltos", ord[1].id === "saa-17" && ord[2].id === "saa-18");
+check("llega hasta el final del pool", ord.length === QUESTIONS.length - 15);
+const ordClamp = GC.buildQueue("ordered", { offset: 99999 }, QUESTIONS, idx, stateQ, now);
+check("offset fuera de rango se acota", ordClamp.length === 1);
+
+console.log("== Repaso incluye falladas ==");
+const reviewState = {
+  "saa-1": { s: 1, c: 0, w: 1, box: 0, due: now + 999999, flag: false }, // fallada, aún no due
+  "saa-2": { s: 2, c: 1, w: 1, box: 0, due: now - 1000, flag: false },   // due
+  "saa-3": { s: 1, c: 1, w: 0, box: 1, due: now + 999999, flag: true },  // marcada
+  "saa-4": { s: 1, c: 1, w: 0, box: 1, due: now + 999999, flag: false }, // acertada: fuera
+};
+const rev = GC.buildQueue("review", { count: 15 }, QUESTIONS, idx, reviewState, now);
+const revIds = new Set(rev.map((q) => q.id));
+check("incluye la fallada aunque no toque aún", revIds.has("saa-1"));
+check("incluye la programada (due)", revIds.has("saa-2"));
+check("incluye la marcada ★", revIds.has("saa-3"));
+check("excluye la acertada sin marcar", !revIds.has("saa-4"));
 
 console.log("== Corrección de respuestas (igual que el quiz clásico) ==");
 const qMulti = { correct: ["A", "C"] };

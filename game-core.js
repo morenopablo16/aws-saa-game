@@ -276,13 +276,21 @@
     const inCategory = (q) => !opts.categoryId || catIndex.byQ[q.id] === opts.categoryId;
 
     if (mode === "review") {
-      const due = questions.filter((q) => isDue(stateQ[q.id], now));
-      const flagged = questions.filter((q) => stateQ[q.id] && stateQ[q.id].flag && !due.includes(q));
-      let pool = due.concat(flagged);
-      if (pool.length === 0) {
-        pool = questions.filter((q) => stateQ[q.id] && stateQ[q.id].w > stateQ[q.id].c);
+      // Repaso = programadas (Leitner) + falladas en el último intento + marcadas ★.
+      const seen = new Set();
+      const pool = [];
+      const push = (q) => { if (!seen.has(q.id)) { seen.add(q.id); pool.push(q); } };
+      for (const q of questions) if (isDue(stateQ[q.id], now)) push(q);
+      for (const q of questions) {
+        const s = stateQ[q.id];
+        if (s && s.w > 0 && (s.box || 0) === 0) push(q); // caja 0 con fallos = último intento fallado
       }
-      return shuffleInPlace(pool.slice(), rand).slice(0, opts.count || 15);
+      for (const q of questions) if (stateQ[q.id] && stateQ[q.id].flag) push(q);
+      let out = pool;
+      if (out.length === 0) {
+        out = questions.filter((q) => stateQ[q.id] && stateQ[q.id].w > stateQ[q.id].c);
+      }
+      return shuffleInPlace(out.slice(), rand).slice(0, opts.count || 15);
     }
 
     if (mode === "boss") {
@@ -305,9 +313,21 @@
       return unseen.concat(due, seen).slice(0, opts.count || 10);
     }
 
-    if (mode === "sprint" || mode === "survival") {
-      // Cola larga: la sesión termina por tiempo o vidas, no por agotar preguntas.
+    if (mode === "survival") {
+      // Cola larga: la sesión termina por vidas, no por agotar preguntas.
       return shuffleInPlace(questions.slice(), rand);
+    }
+
+    if (mode === "ordered") {
+      // Como el modo clásico "in order" con offset: recorre el pool activo en
+      // orden (Exam 1 #1, #2, …) empezando en la posición 1-based opts.offset.
+      const pool = questions.slice().sort((a, b) => {
+        const ea = parseInt(String(a.exam).replace(/\D+/g, ""), 10) || 0;
+        const eb = parseInt(String(b.exam).replace(/\D+/g, ""), 10) || 0;
+        return ea - eb || (a.index || 0) - (b.index || 0);
+      });
+      const start = Math.min(Math.max((opts.offset || 1) - 1, 0), Math.max(pool.length - 1, 0));
+      return pool.slice(start);
     }
 
     // quick (adaptativo): prioriza repasos pendientes y categorías débiles.
