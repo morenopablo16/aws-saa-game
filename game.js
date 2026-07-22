@@ -110,8 +110,10 @@
   function ensureDaily() {
     const today = GC.dayKey(new Date());
     if (state.daily.day !== today) {
-      state.daily = { day: today, missions: GC.generateDailyMissions(today) };
+      state.daily = { day: today, missions: GC.generateDailyMissions(today), rerolls: 0 };
       saveState();
+    } else if (typeof state.daily.rerolls !== "number") {
+      state.daily.rerolls = 0; // estados guardados antes de esta versión
     }
   }
 
@@ -206,16 +208,55 @@
   function renderMissions() {
     const box = $("missionsList");
     box.innerHTML = "";
-    for (const m of state.daily.missions) {
+    const cost = GC.refreshCost(state.daily.rerolls);
+    const canAfford = state.coins >= cost;
+    state.daily.missions.forEach((m, i) => {
       const div = document.createElement("div");
       div.className = "mission-card" + (m.done ? " done" : "");
       const pct = Math.min(100, Math.round((m.progress / m.n) * 100));
-      div.innerHTML =
-        `<div class="mtext">${m.done ? "✅ " : ""}${m.text}</div>` +
-        `<div class="mini-bar"><div class="fill" style="width:${pct}%"></div></div>` +
-        `<div class="mreward">${m.progress}/${m.n} · Recompensa: +${m.reward.xp} XP, +${m.reward.coins} 🪙</div>`;
+      const head = document.createElement("div");
+      head.className = "mission-head";
+      head.innerHTML =
+        `<div class="mtext">${m.done ? "✅ " : ""}${m.text}</div>`;
+      // Botón refrescar: cambia esta misión por otra nueva gastando monedas.
+      const btn = document.createElement("button");
+      btn.className = "mission-refresh";
+      btn.disabled = !canAfford;
+      btn.title = m.done
+        ? "Nueva misión para seguir ganando"
+        : "Cambiar esta misión por otra";
+      btn.innerHTML = `${m.done ? "🔄 Nueva" : "🔄 Cambiar"} · ${cost} 🪙`;
+      btn.addEventListener("click", () => refreshMission(i));
+      head.appendChild(btn);
+      div.appendChild(head);
+      const bar = document.createElement("div");
+      bar.className = "mini-bar";
+      bar.innerHTML = `<div class="fill" style="width:${pct}%"></div>`;
+      div.appendChild(bar);
+      const reward = document.createElement("div");
+      reward.className = "mreward";
+      reward.textContent = `${m.progress}/${m.n} · Recompensa: +${m.reward.xp} XP, +${m.reward.coins} 🪙`;
+      div.appendChild(reward);
       box.appendChild(div);
+    });
+  }
+
+  function refreshMission(index) {
+    ensureDaily();
+    const cost = GC.refreshCost(state.daily.rerolls);
+    if (state.coins < cost) {
+      toast(`Necesitas ${cost} 🪙 para refrescar. Acierta preguntas para ganar monedas.`, "");
+      return;
     }
+    const kinds = state.daily.missions.map((m) => m.kind);
+    const fresh = GC.generateReplacementMission(kinds, Math.random);
+    state.coins -= cost;
+    state.daily.rerolls += 1;
+    state.daily.missions[index] = fresh;
+    saveState();
+    renderHUD();
+    renderMissions();
+    toast(`Nueva misión: ${fresh.text} · −${cost} 🪙`, "mission");
   }
 
   function categoryStats(catId) {

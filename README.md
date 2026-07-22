@@ -42,6 +42,8 @@ node game-selftest.js   # 33 comprobaciones de la lógica del juego
 | ❤️ Supervivencia | 3 vidas, cada fallo cuesta una |
 | 🔁 Repaso | Falladas + marcadas (★) + repasos programados que tocan hoy |
 
+**Monedas 🪙:** se ganan con cada acierto y al completar misiones. Se gastan para **refrescar misiones**: cambia una misión (completada o no) por otra nueva desde el dashboard. El precio sube con cada cambio del día (20, 35, 50…) para que las monedas escaseen y la decisión importe.
+
 **Rangos:** Cloud Intern (1) → Junior Architect (5) → Solutions Architect (10) → Principal Architect (18) → AWS Legend (30).
 
 **Teclado:** `A`–`E` marcan opciones, `Enter` responde/avanza.

@@ -87,6 +87,16 @@ const missions = GC.generateDailyMissions("2026-07-02");
 const done = GC.applyEventToMissions(missions, { correct: true, hard: true, categoryId: "ec2", xp: 20, combo: 1 });
 check("aplicar evento no rompe misiones", Array.isArray(done) && missions.every((m) => m.progress >= 0));
 
+console.log("== Refrescar misiones (uso de monedas) ==");
+const repl = GC.generateReplacementMission(["answer", "correct", "combo"], () => 0.5);
+check("misión de reemplazo es válida", repl && repl.text && repl.reward && repl.progress === 0 && repl.done === false);
+check("evita los tipos ya presentes", !["answer", "correct", "combo"].includes(repl.kind));
+const allKinds = GC.generateReplacementMission(["answer","correct","combo","hard","xp","category"], () => 0.5);
+check("si todos los tipos están, aún genera una", !!allKinds && !!allKinds.text);
+check("coste base = 20", GC.refreshCost(0) === 20);
+check("coste sube con cada refresco", GC.refreshCost(1) === 35 && GC.refreshCost(3) === 65);
+check("coste monótono creciente", GC.refreshCost(5) > GC.refreshCost(4));
+
 console.log("== Repetición espaciada ==");
 const now = Date.now();
 let qs = GC.scheduleReview(null, false, now);

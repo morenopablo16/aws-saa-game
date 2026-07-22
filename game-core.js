@@ -196,6 +196,14 @@
     { kind: "category", make: (rng) => ({ n: 4, catId: CATEGORY_DEFS[Math.floor(rng() * CATEGORY_DEFS.length)].id }), text: (m) => `Acierta ${m.n} de ${categoryById(m.catId).name}`, reward: (m) => ({ xp: 100, coins: 30 }) },
   ];
 
+  function buildMission(tpl, rng) {
+    const params = tpl.make(rng);
+    const m = Object.assign({ kind: tpl.kind, progress: 0, done: false }, params);
+    m.text = tpl.text(m);
+    m.reward = tpl.reward(m);
+    return m;
+  }
+
   function generateDailyMissions(dayKey) {
     const rng = mulberry32(hashStr("missions-" + dayKey));
     const pool = MISSION_TEMPLATES.slice();
@@ -203,13 +211,26 @@
     for (let i = 0; i < 3 && pool.length; i++) {
       const idx = Math.floor(rng() * pool.length);
       const tpl = pool.splice(idx, 1)[0];
-      const params = tpl.make(rng);
-      const m = Object.assign({ kind: tpl.kind, progress: 0, done: false }, params);
-      m.text = tpl.text(m);
-      m.reward = tpl.reward(m);
-      missions.push(m);
+      missions.push(buildMission(tpl, rng));
     }
     return missions;
+  }
+
+  // Genera UNA misión nueva (para refrescar), evitando los tipos ya presentes
+  // para mantener variedad. Es aleatoria, no determinista: la pide el jugador.
+  function generateReplacementMission(avoidKinds, rng) {
+    rng = rng || Math.random;
+    const avoid = new Set(avoidKinds || []);
+    let pool = MISSION_TEMPLATES.filter((t) => !avoid.has(t.kind));
+    if (pool.length === 0) pool = MISSION_TEMPLATES.slice();
+    const tpl = pool[Math.floor(rng() * pool.length)];
+    return buildMission(tpl, rng);
+  }
+
+  // Coste creciente de refrescar misiones dentro del día: cada refresco encarece
+  // el siguiente, para que las monedas se gasten de verdad y no solo se acumulen.
+  function refreshCost(rerolls) {
+    return 20 + (rerolls || 0) * 15;
   }
 
   /**
@@ -392,7 +413,7 @@
     XP, comboMultiplier, scoreAnswer,
     xpNeededFor, levelFromXp, RANKS, rankForLevel, nextRank,
     LEITNER_MS, scheduleReview, isDue,
-    generateDailyMissions, applyEventToMissions,
+    generateDailyMissions, generateReplacementMission, refreshCost, applyEventToMissions,
     CHEST_EVERY, rollChest,
     buildQueue, checkAnswer, accuracyOf,
     dayKey, updateDailyStreak, shuffleInPlace,
