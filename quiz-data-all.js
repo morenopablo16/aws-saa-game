@@ -3997,7 +3997,7 @@ const QUESTIONS_ALL = [
       }
     ],
     "correct": [
-      "C"
+      "A"
     ],
     "explanation": "Create a new S3 bucket. Load the data into the new S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with AWS KMS multi-Region kays (SSE-KMS). Use Amazon Athena to query the data."
   },
