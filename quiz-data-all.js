@@ -4152,7 +4152,7 @@ const QUESTIONS_ALL = [
       }
     ],
     "correct": [
-      "B"
+      "A"
     ],
     "explanation": "Deploy the application stack in two AWS Regions. Use an Amazon Route 53 latency routing policy to serve all content from the ALB in the closest Region."
   },
