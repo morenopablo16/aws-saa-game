@@ -4059,7 +4059,7 @@ const QUESTIONS_ALL = [
       }
     ],
     "correct": [
-      "D"
+      "B"
     ],
     "explanation": "Configure all existing AWS accounts and all newly created accounts to use the same root user email address. Configure AWS account alternate contacts in the AWS Organizations console or programmatically."
   },
