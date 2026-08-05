@@ -6455,7 +6455,7 @@ const QUESTIONS_ALL = [
       }
     ],
     "correct": [
-      "A"
+      "B"
     ],
     "explanation": "Create an Amazon API Gateway REST API. Configure the method to use the Lambda function. Enable IAM authentication on the API."
   },
