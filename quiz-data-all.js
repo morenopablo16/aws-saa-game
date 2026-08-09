@@ -8918,7 +8918,7 @@ const QUESTIONS_ALL = [
       }
     ],
     "correct": [
-      "C"
+      "D"
     ],
     "explanation": "Provision an AWS Storage Gateway Volume Gateway cached volume. Set the local cache to 10 TB. Mount the Volume Gateway cached volume to the existing file server by using iSCSI, and copy all files to the storage volume. Configure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance."
   },
