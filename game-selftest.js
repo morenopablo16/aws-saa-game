@@ -140,12 +140,21 @@ const reviewState = {
   "saa-3": { s: 1, c: 1, w: 0, box: 1, due: now + 999999, flag: true },  // marcada
   "saa-4": { s: 1, c: 1, w: 0, box: 1, due: now + 999999, flag: false }, // acertada: fuera
 };
-const rev = GC.buildQueue("review", { count: 15 }, QUESTIONS, idx, reviewState, now);
+const rev = GC.buildQueue("review", {}, QUESTIONS, idx, reviewState, now);
 const revIds = new Set(rev.map((q) => q.id));
 check("incluye la fallada aunque no toque aún", revIds.has("saa-1"));
 check("incluye la programada (due)", revIds.has("saa-2"));
 check("incluye la marcada ★", revIds.has("saa-3"));
 check("excluye la acertada sin marcar", !revIds.has("saa-4"));
+
+// Sin count, el repaso NO se limita: incluye todas las pendientes/marcadas.
+const manyState = {};
+const first40 = QUESTIONS.slice(0, 40); // ids reales, sin asumir que son contiguos
+for (const q of first40) manyState[q.id] = { s: 1, c: 0, w: 1, box: 0, due: now - 1000, flag: false };
+const revAll = GC.buildQueue("review", {}, QUESTIONS, idx, manyState, now);
+check("sin límite: 40 pendientes -> 40 en el repaso", revAll.length === 40);
+const revCapped = GC.buildQueue("review", { count: 15 }, QUESTIONS, idx, manyState, now);
+check("con count sí se respeta el límite", revCapped.length === 15);
 
 console.log("== Corrección de respuestas (igual que el quiz clásico) ==");
 const qMulti = { correct: ["A", "C"] };

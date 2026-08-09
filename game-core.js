@@ -311,7 +311,9 @@
       if (out.length === 0) {
         out = questions.filter((q) => stateQ[q.id] && stateQ[q.id].w > stateQ[q.id].c);
       }
-      return shuffleInPlace(out.slice(), rand).slice(0, opts.count || 15);
+      out = shuffleInPlace(out.slice(), rand);
+      // Sin opts.count, el repaso incluye TODAS las pendientes/marcadas.
+      return opts.count ? out.slice(0, opts.count) : out;
     }
 
     if (mode === "boss") {

@@ -155,7 +155,7 @@
       mode,
       {
         categoryId: categoryId || null,
-        count: mode === "boss" ? 5 : mode === "review" ? 15 : 10,
+        count: mode === "boss" ? 5 : mode === "review" ? null : 10,
         offset: opts.offset || 1,
       },
       activePool(), catIndex, state.q, Date.now(), Math.random
