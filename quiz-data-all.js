@@ -11887,7 +11887,7 @@ const QUESTIONS_ALL = [
       }
     ],
     "correct": [
-      "D"
+      "A"
     ],
     "explanation": "Use AWS Storage Gateway to move the existing data to Amazon S3. Use AWS CloudTrail to log management events."
   },
