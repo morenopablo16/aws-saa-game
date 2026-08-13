@@ -11790,7 +11790,7 @@ const QUESTIONS_ALL = [
       },
       {
         "k": "D",
-        "html": "Direct the requests from the API into an Amazon Simple Queue Service (Amazon SQS) queue. Deploy the models as Amazon Elastic of the service based on the queue size."
+        "html": "Direct the requests from the API into an Amazon SQS queue. Deploy the models as Amazon Elastic Container Service (Amazon ECS) services that read from the queue. Enable AWS Auto Scaling on Amazon ECS for both the cluster and copies of the service based on the queue size."
       }
     ],
     "correct": [
