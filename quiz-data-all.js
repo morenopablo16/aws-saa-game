@@ -14610,9 +14610,9 @@ const QUESTIONS_ALL = [
       }
     ],
     "correct": [
+      "A",
       "B",
-      "C",
-      "E"
+      "C"
     ],
     "explanation": "Supporting client-side and server-side encryption"
   },
