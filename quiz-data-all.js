@@ -14865,7 +14865,7 @@ const QUESTIONS_ALL = [
       }
     ],
     "correct": [
-      "B"
+      "A"
     ],
     "explanation": "Amazon CloudFront with Lambda@Edge functions"
   },
