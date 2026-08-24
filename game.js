@@ -31,7 +31,7 @@
       streak: { last: "", days: 0 },
       daily: { day: "", missions: [] },
       exams: [],  // packs de examen activos; vacío = todos (se normaliza al cargar)
-      q: {},      // qid -> {s, c, w, box, due, flag}
+      q: {},      // qid -> {s, c, w, box, due, flag, rf}
       boss: {},   // categoryId -> true si el jefe fue derrotado
       history: [] // {t, mode, n, c, xp}
     };
@@ -55,12 +55,12 @@
     const now = Date.now();
     if (Array.isArray(seen)) {
       for (const id of seen) {
-        if (!st.q[id]) st.q[id] = { s: 1, c: 1, w: 0, box: 1, due: now + GC.LEITNER_MS[1], flag: false };
+        if (!st.q[id]) st.q[id] = { s: 1, c: 1, w: 0, box: 1, due: now + GC.LEITNER_MS[1], flag: false, rf: 0 };
       }
     }
     if (Array.isArray(wrong)) {
       for (const id of wrong) {
-        st.q[id] = { s: 1, c: 0, w: 1, box: 0, due: now, flag: false };
+        st.q[id] = { s: 1, c: 0, w: 1, box: 0, due: now, flag: false, rf: 0 };
       }
     }
     return st;
@@ -81,6 +81,10 @@
   if (!state || state.v !== 1) {
     state = migrateFromClassic(freshState());
     saveState();
+  }
+  // Normalizar estados guardados antes de añadir el campo rf.
+  for (const id of Object.keys(state.q || {})) {
+    if (typeof state.q[id].rf !== "number") state.q[id].rf = 0;
   }
 
   const catIndex = GC.buildCategoryIndex(ALL);
@@ -127,6 +131,7 @@
     ordered:  { name: "En orden", tag: "EN ORDEN", icon: "📖", desc: "Recorre el pack pregunta a pregunta desde donde tú elijas. Sin repetir." },
     survival: { name: "Supervivencia", tag: "SUPERVIVENCIA", icon: "❤️", desc: "3 vidas. Cada fallo cuesta una. ¿Hasta dónde llegas?" },
     review:   { name: "Repaso", tag: "REPASO", icon: "🔁", desc: "Preguntas falladas, marcadas ★ y repasos que tocan hoy." },
+    review_fail: { name: "Falladas de repaso", tag: "FALLADAS REPASO", icon: "🎯", desc: "Repite solo las preguntas que fallaste en el modo Repaso." },
   };
 
   let S = null; // sesión activa
@@ -155,7 +160,7 @@
       mode,
       {
         categoryId: categoryId || null,
-        count: mode === "boss" ? 5 : mode === "review" ? null : 10,
+        count: mode === "boss" ? 5 : (mode === "review" || mode === "review_fail") ? null : 10,
         offset: opts.offset || 1,
       },
       activePool(), catIndex, state.q, Date.now(), Math.random
@@ -315,7 +320,7 @@
   function renderModes() {
     const grid = $("modesGrid");
     grid.innerHTML = "";
-    for (const key of ["quick", "ordered", "survival", "review"]) {
+    for (const key of ["quick", "ordered", "survival", "review", "review_fail"]) {
       const m = MODES[key];
       let extra = "";
       if (key === "review") {
@@ -329,6 +334,13 @@
         const flagged = pool.filter((q) => state.q[q.id] && state.q[q.id].flag).length;
         if (due + failed + flagged > 0) {
           extra = `<div class="mode-desc" style="color:var(--orange-hi); margin-top:4px;">${due} pendientes · ${failed} falladas · ${flagged} marcadas</div>`;
+        }
+      }
+
+      if (key === "review_fail") {
+        const rfCount = activePool().filter((q) => (state.q[q.id] && (state.q[q.id].rf || 0)) > 0).length;
+        if (rfCount > 0) {
+          extra = `<div class="mode-desc" style="color:var(--orange-hi); margin-top:4px;">${rfCount} para reforzar</div>`;
         }
       }
 
@@ -569,6 +581,20 @@
     const prevFlag = state.q[q.id] ? !!state.q[q.id].flag : false;
     state.q[q.id] = GC.scheduleReview(state.q[q.id], ok, Date.now());
     state.q[q.id].flag = prevFlag;
+
+    // Seguimiento de fallos ocurridos durante el modo Repaso.
+    if (S.mode === "review" && !ok) {
+      state.q[q.id].rf = (state.q[q.id].rf || 0) + 1;
+    }
+    // En el modo dedicado, acertar reduce el contador y fallar lo incrementa.
+    if (S.mode === "review_fail") {
+      if (ok) {
+        state.q[q.id].rf = Math.max(0, (state.q[q.id].rf || 0) - 1);
+      } else {
+        state.q[q.id].rf = (state.q[q.id].rf || 0) + 1;
+      }
+    }
+
     GC.updateDailyStreak(state.streak, GC.dayKey(new Date()));
     syncClassicKeys(q.id, ok);
 
@@ -850,7 +876,7 @@
   $("flagBtn").addEventListener("click", () => {
     const q = currentQ();
     if (!q) return;
-    if (!state.q[q.id]) state.q[q.id] = { s: 0, c: 0, w: 0, box: 0, due: 0, flag: false };
+    if (!state.q[q.id]) state.q[q.id] = { s: 0, c: 0, w: 0, box: 0, due: 0, flag: false, rf: 0 };
     state.q[q.id].flag = !state.q[q.id].flag;
     saveState();
     const flagged = state.q[q.id].flag;

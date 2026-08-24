@@ -101,6 +101,7 @@ console.log("== Repetición espaciada ==");
 const now = Date.now();
 let qs = GC.scheduleReview(null, false, now);
 check("fallo → caja 0, repaso en 10 min", qs.box === 0 && qs.due === now + GC.LEITNER_MS[0]);
+check("scheduleReview inicializa rf a 0", qs.rf === 0);
 qs = GC.scheduleReview(qs, true, now);
 check("acierto → sube de caja", qs.box === 1 && qs.due === now + GC.LEITNER_MS[1]);
 check("isDue detecta pendiente", GC.isDue({ w: 1, due: now - 1000 }, now) === true);
@@ -155,6 +156,21 @@ const revAll = GC.buildQueue("review", {}, QUESTIONS, idx, manyState, now);
 check("sin límite: 40 pendientes -> 40 en el repaso", revAll.length === 40);
 const revCapped = GC.buildQueue("review", { count: 15 }, QUESTIONS, idx, manyState, now);
 check("con count sí se respeta el límite", revCapped.length === 15);
+
+console.log("== Falladas de repaso ==");
+const rfState = {
+  "saa-1": { s: 1, c: 0, w: 1, box: 0, due: now + 999999, flag: false, rf: 1 },
+  "saa-2": { s: 1, c: 0, w: 1, box: 0, due: now + 999999, flag: false, rf: 0 },
+  "saa-3": { s: 1, c: 1, w: 0, box: 1, due: now + 999999, flag: false, rf: 2 },
+};
+const rff = GC.buildQueue("review_fail", {}, QUESTIONS, idx, rfState, now);
+const rffIds = new Set(rff.map((q) => q.id));
+check("review_fail solo incluye rf > 0", rff.every((q) => (rfState[q.id].rf || 0) > 0));
+check("review_fail excluye rf = 0", !rffIds.has("saa-2"));
+check("review_fail incluye rf = 1 y rf = 2", rffIds.has("saa-1") && rffIds.has("saa-3"));
+check("review_fail vacío cuando no hay falladas", GC.buildQueue("review_fail", {}, QUESTIONS, idx, {}, now).length === 0);
+const rffCap = GC.buildQueue("review_fail", { count: 1 }, QUESTIONS, idx, rfState, now);
+check("review_fail respeta opts.count", rffCap.length === 1);
 
 console.log("== Corrección de respuestas (igual que el quiz clásico) ==");
 const qMulti = { correct: ["A", "C"] };

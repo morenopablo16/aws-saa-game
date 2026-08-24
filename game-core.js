@@ -168,7 +168,7 @@
   const LEITNER_MS = [10 * 60e3, 86400e3, 3 * 86400e3, 7 * 86400e3, 14 * 86400e3];
 
   function scheduleReview(qstat, correct, now) {
-    const s = qstat || { s: 0, c: 0, w: 0, box: 0, due: 0, flag: false };
+    const s = qstat || { s: 0, c: 0, w: 0, box: 0, due: 0, flag: false, rf: 0 };
     s.s += 1;
     if (correct) {
       s.c += 1;
@@ -286,8 +286,8 @@
 
   /**
    * Construye la cola de preguntas de una sesión.
-   * mode: quick | campaign | boss | sprint | survival | review
-   * state.q: mapa qid -> {s,c,w,box,due,flag}
+   * mode: quick | campaign | boss | sprint | survival | review | review_fail
+   * state.q: mapa qid -> {s,c,w,box,due,flag,rf}
    */
   function buildQueue(mode, opts, questions, catIndex, stateQ, now, rng) {
     const rand = rng || Math.random;
@@ -313,6 +313,13 @@
       }
       out = shuffleInPlace(out.slice(), rand);
       // Sin opts.count, el repaso incluye TODAS las pendientes/marcadas.
+      return opts.count ? out.slice(0, opts.count) : out;
+    }
+
+    if (mode === "review_fail") {
+      // Falladas específicamente durante sesiones de repaso.
+      const pool = questions.filter((q) => (stateQ[q.id] && (stateQ[q.id].rf || 0)) > 0);
+      const out = shuffleInPlace(pool.slice(), rand);
       return opts.count ? out.slice(0, opts.count) : out;
     }
 
