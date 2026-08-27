@@ -3806,7 +3806,7 @@ const QUESTIONS_ALL = [
       }
     ],
     "correct": [
-      "B"
+      "A"
     ],
     "explanation": "Spot Instances give the lowest cost for stateless workloads that tolerate interruption. Between the two Spot options, an EKS managed node group handles node provisioning, lifecycle and container orchestration for you, whereas a plain EC2 Auto Scaling group would leave you to run the orchestration yourself - so it wins on operational overhead."
   },
