@@ -582,18 +582,9 @@
     state.q[q.id] = GC.scheduleReview(state.q[q.id], ok, Date.now());
     state.q[q.id].flag = prevFlag;
 
-    // Seguimiento de fallos ocurridos durante el modo Repaso.
-    if (S.mode === "review" && !ok) {
-      state.q[q.id].rf = (state.q[q.id].rf || 0) + 1;
-    }
-    // En el modo dedicado, acertar reduce el contador y fallar lo incrementa.
-    if (S.mode === "review_fail") {
-      if (ok) {
-        state.q[q.id].rf = Math.max(0, (state.q[q.id].rf || 0) - 1);
-      } else {
-        state.q[q.id].rf = (state.q[q.id].rf || 0) + 1;
-      }
-    }
+    // Seguimiento de "falladas de repaso": simétrico entre Repaso y el modo
+    // dedicado, para que acertar en cualquiera de los dos limpie el contador.
+    GC.trackReviewFail(state.q[q.id], S.mode, ok);
 
     GC.updateDailyStreak(state.streak, GC.dayKey(new Date()));
     syncClassicKeys(q.id, ok);

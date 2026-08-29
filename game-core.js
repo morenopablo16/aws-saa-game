@@ -185,6 +185,19 @@
     return !!qstat && qstat.w > 0 && qstat.due <= now;
   }
 
+  // ---------- Seguimiento de "falladas de repaso" (rf) ----------
+  // rf cuenta cuántas veces una pregunta necesita refuerzo tras fallar en el
+  // modo Repaso. Simétrico a propósito: fallar en Repaso O en el modo
+  // dedicado "Falladas de repaso" lo sube; acertar en CUALQUIERA de los dos
+  // lo baja (nunca por debajo de 0). Si solo bajara dentro del modo dedicado,
+  // una pregunta acertada de nuevo en un Repaso normal quedaría atascada para
+  // siempre en Falladas de repaso aunque el jugador ya la supiera.
+  function trackReviewFail(qstat, mode, correct) {
+    if (mode !== "review" && mode !== "review_fail") return;
+    const cur = qstat.rf || 0;
+    qstat.rf = correct ? Math.max(0, cur - 1) : cur + 1;
+  }
+
   // ---------- Misiones diarias ----------
   // Deterministas por fecha: el mismo día genera siempre las mismas 3 misiones.
   const MISSION_TEMPLATES = [
@@ -421,7 +434,7 @@
     isHard,
     XP, comboMultiplier, scoreAnswer,
     xpNeededFor, levelFromXp, RANKS, rankForLevel, nextRank,
-    LEITNER_MS, scheduleReview, isDue,
+    LEITNER_MS, scheduleReview, isDue, trackReviewFail,
     generateDailyMissions, generateReplacementMission, refreshCost, applyEventToMissions,
     CHEST_EVERY, rollChest,
     buildQueue, checkAnswer, accuracyOf,

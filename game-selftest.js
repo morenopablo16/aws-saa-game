@@ -172,6 +172,29 @@ check("review_fail vacío cuando no hay falladas", GC.buildQueue("review_fail", 
 const rffCap = GC.buildQueue("review_fail", { count: 1 }, QUESTIONS, idx, rfState, now);
 check("review_fail respeta opts.count", rffCap.length === 1);
 
+// Bug reportado: falla en modo Repaso (rf sube), acierta MÁS TARDE en el
+// propio modo Repaso (no en el modo dedicado Falladas-de-repaso) -> rf debe
+// bajar. Con la lógica original solo bajaba dentro de "review_fail", así que
+// la pregunta quedaba atascada para siempre en Falladas-de-repaso aunque el
+// jugador ya la hubiera acertado en una sesión de Repaso normal.
+let track = { rf: 0 };
+GC.trackReviewFail(track, "review", false);
+check("fallar en Repaso sube rf", track.rf === 1);
+GC.trackReviewFail(track, "review", true);
+check("acertar en Repaso (no solo en Falladas-de-repaso) baja rf", track.rf === 0);
+track = { rf: 1 };
+GC.trackReviewFail(track, "review_fail", true);
+check("acertar en Falladas-de-repaso también baja rf", track.rf === 0);
+track = { rf: 0 };
+GC.trackReviewFail(track, "review_fail", false);
+check("fallar en Falladas-de-repaso sube rf", track.rf === 1);
+track = { rf: 3 };
+GC.trackReviewFail(track, "quick", true);
+check("otros modos no tocan rf", track.rf === 3);
+track = { rf: 0 };
+GC.trackReviewFail(track, "review", true);
+check("rf nunca baja de 0", track.rf === 0);
+
 console.log("== Corrección de respuestas (igual que el quiz clásico) ==");
 const qMulti = { correct: ["A", "C"] };
 check("multirespuesta exacta", GC.checkAnswer(qMulti, ["C", "A"]) === true);
