@@ -16,6 +16,13 @@ function loadQuestions() {
   return fn({});
 }
 
+// Carga el mini-dataset independiente (Networking/VIF) igual que un segundo <script>.
+function loadWdsQuestions() {
+  const src = fs.readFileSync(path.join(__dirname, "dataset-wds-networking.js"), "utf8");
+  const fn = new Function("window", src + "\n;return QUESTIONS_WDS_NETWORKING;");
+  return fn({});
+}
+
 let failures = 0;
 function check(name, cond) {
   if (cond) {
@@ -27,7 +34,11 @@ function check(name, cond) {
 }
 
 console.log("== Datos ==");
-const QUESTIONS = loadQuestions();
+const BASE_QUESTIONS = loadQuestions();
+const WDS_QUESTIONS = loadWdsQuestions();
+// Igual que en el navegador (quiz-data-all.js primero, luego el mini-dataset
+// empujando sobre el mismo array global QUESTIONS).
+const QUESTIONS = BASE_QUESTIONS.concat(WDS_QUESTIONS);
 check("carga de preguntas (>600)", Array.isArray(QUESTIONS) && QUESTIONS.length > 600);
 check("todas tienen id, prompt, opciones y respuesta", QUESTIONS.every(
   (q) => q.id && q.prompt && Array.isArray(q.options) && q.options.length >= 2 && Array.isArray(q.correct) && q.correct.length >= 1
@@ -36,6 +47,15 @@ check("ids únicos", new Set(QUESTIONS.map((q) => q.id)).size === QUESTIONS.leng
 check("respuestas correctas existen entre las opciones", QUESTIONS.every(
   (q) => q.correct.every((k) => q.options.some((o) => o.k === k))
 ));
+
+console.log("== Mini-dataset: Networking / VIF (Exam 12) ==");
+check("se cargan las 12 preguntas", WDS_QUESTIONS.length === 12);
+check("todas caen en el pack Exam 12", WDS_QUESTIONS.every((q) => q.exam === "Exam 12"));
+check("ids sin colisión con el banco principal", WDS_QUESTIONS.every((q) => !BASE_QUESTIONS.some((b) => b.id === q.id)));
+for (const q of WDS_QUESTIONS) {
+  const expected = /\(choose two\.?\)/i.test(q.prompt) ? 2 : 1;
+  check(`${q.id}: nº de respuestas coincide con el enunciado`, q.correct.length === expected);
+}
 
 console.log("== Integridad del texto (errores de parseo del PDF) ==");
 // Pegados por borrado de marcadores "X. " a mitad de frase (ALB. Use -> ALUse).

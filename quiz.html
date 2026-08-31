@@ -138,6 +138,7 @@
               <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam9" checked> <span>Exam 9</span></label>
               <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam10" checked> <span>Exam 10</span></label>
               <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam11" checked> <span>Exam 11</span></label>
+              <label class="chk" style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><input type="checkbox" id="exam12" checked> <span>Exam 12</span></label>
             </div>
           </div>
           <div>
@@ -181,7 +182,8 @@
     </div>
   </div>
 
-<script src="quiz-data-all.js?v=7"></script>
+<script src="quiz-data-all.js?v=8"></script>
+<script src="dataset-wds-networking.js?v=8"></script>
 <script>
   const WRONG_KEY = "aws_saa_wrong_ids_v1";
   const SEEN_KEY = "aws_saa_seen_ids_v1";
@@ -228,10 +230,10 @@
 
   function getSelectedExams() {
     const exams = [];
-    for (let i = 1; i <= 11; i++) {
+    for (let i = 1; i <= 12; i++) {
       if ($(`exam${i}`)?.checked) exams.push(`Exam ${i}`);
     }
-    return exams.length > 0 ? exams : ["Exam 1", "Exam 2", "Exam 3", "Exam 4", "Exam 5", "Exam 6", "Exam 7", "Exam 8", "Exam 9", "Exam 10", "Exam 11"];
+    return exams.length > 0 ? exams : ["Exam 1", "Exam 2", "Exam 3", "Exam 4", "Exam 5", "Exam 6", "Exam 7", "Exam 8", "Exam 9", "Exam 10", "Exam 11", "Exam 12"];
   }
 
   function getFilteredQuestions() {
